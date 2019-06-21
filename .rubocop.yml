@@ -1,0 +1,26 @@
+require: rubocop-rails
+
+AllCops:
+  Exclude:
+    - db/**/*
+    - node_modules/**/*
+    - tmp/**/*
+    - vendor/**/*
+    - bin/**/*
+    - config/environments/*
+    - config/initializers/*
+  DisplayCopNames: true
+  TargetRailsVersion: 5.0
+
+Rails:
+  Enabled: true
+
+Documentation:
+  Enabled: false
+
+Metrics/BlockLength:
+  ExcludedMethods: ['describe', 'context']
+
+Layout/AlignHash:
+  EnforcedHashRocketStyle: table
+  EnforcedColonStyle: table
