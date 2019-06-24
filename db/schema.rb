@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_24_183535) do
+ActiveRecord::Schema.define(version: 2019_06_24_190226) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,20 @@ ActiveRecord::Schema.define(version: 2019_06_24_183535) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["parent_id"], name: "index_areas_on_parent_id"
     t.index ["slug"], name: "index_areas_on_slug", unique: true
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string "locatable_type", null: false
+    t.bigint "locatable_id", null: false
+    t.string "street_name", null: false
+    t.string "street_number", null: false
+    t.string "postal_code", null: false
+    t.string "city", null: false
+    t.string "latitude", null: false
+    t.string "longitude", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["locatable_type", "locatable_id"], name: "index_locations_on_locatable_type_and_locatable_id"
   end
 
   create_table "places", force: :cascade do |t|
