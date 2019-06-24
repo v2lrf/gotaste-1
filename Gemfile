@@ -7,9 +7,11 @@ ruby '2.6.2'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
+gem 'page_meta'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 6.0.0.rc1'
+gem 'rails-i18n'
 gem 'sass-rails', '~> 5'
 gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 4.0'

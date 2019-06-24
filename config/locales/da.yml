@@ -1,0 +1,15 @@
+da:
+  page_meta:
+    titles:
+      base: "%{value} – GoTaste"
+      home:
+        index: Smag og gå på opdagelse i vinens verden
+      registrations:
+        new: Kom i gang
+      devise:
+        sessions:
+          new: Log ind
+        passwords:
+          new: Glemt adgangskode?
+          edit: Ny adgangskode
+
