@@ -7,6 +7,7 @@ ruby '2.6.2'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
+gem 'geocoder'
 gem 'page_meta'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
