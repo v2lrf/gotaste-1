@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2019_06_24_190226) do
     t.string "short_description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "active", default: false, null: false
     t.index ["area_id"], name: "index_places_on_area_id"
     t.index ["slug"], name: "index_places_on_slug", unique: true
   end
