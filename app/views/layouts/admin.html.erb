@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="da">
+  <%= render 'layouts/head' %>
+  <body class="bg-gray-200 font-sans antialiased text-gray-700">
+
+    <div class="flex items-center py-3 bg-white">
+      <div class="w-1/5 px-4">
+        <%= render 'shared/logo' %>
+      </div>
+
+      <div class="w-3/5 px-4">
+        <div class="absolute pin-t flex items-center p-3">
+        </div>
+        <input type="text" class="w-full p-3 pl-10 text-sm bg-red-200 rounded outline-none" placeholder="Search for users, places or events...">
+      </div>
+
+      <div class="w-1/5">
+        <%= link_to 'Log ud', destroy_user_session_path, method: :delete %>
+      </div>
+    </div>
+
+    <div class="flex">
+      <div class="w-1/5 px-4 pt-4 border-r-2 border-gray-300 min-h-screen">
+        <ul class="list-reset text-md uppercase">
+          <li class="flex items-center py-2 pl-4 my-1 font-semibold">
+            <div class="pr-2 text-gray-500">x</div>
+            <%= link_to 'Home', admin_root_path %>
+          </li>
+          <li class="flex items-center py-2 pl-4 my-1 font-semibold">
+            <div class="pr-2 text-gray-500">x</div>
+            <%= link_to 'Places', admin_root_path %>
+          </li>
+        </ul>
+      </div>
+
+      <div class="w-3/5 px-4">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>
