@@ -1,4 +1,12 @@
 da:
+  home:
+    index:
+      selected_places: Udvalgte steder
+      all: Alle (%{count})
+    place_card:
+      shop: Vinhandler
+      bar:  Bar
+      restaurant: Restaurant
   page_meta:
     titles:
       base: "%{value} – GoTaste"
@@ -12,4 +20,9 @@ da:
         passwords:
           new: Glemt adgangskode?
           edit: Ny adgangskode
-
+      admin:
+        places:
+          index: Steder
+  shared:
+    navbar:
+      places: Steder

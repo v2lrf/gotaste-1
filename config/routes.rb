@@ -8,7 +8,10 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: 'home#index'
+    resources :places, only: :index
   end
+
+  resources :places, only: %i[index show]
 
   root to: 'home#index'
 end

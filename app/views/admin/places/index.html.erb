@@ -1,0 +1,19 @@
+<div>
+  <%= link_to 'Add place', admin_places_path %>
+</div>
+
+<div class="w-full bg-white rounded shadow p-4">
+  <table>
+    <thead>
+      <th>Name</th>
+    </thead>
+
+    <tbody>
+      <% @places.each do |place| %>
+        <tr>
+          <td><%= place.name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

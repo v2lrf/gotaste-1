@@ -28,12 +28,13 @@
           </li>
           <li class="flex items-center py-2 pl-4 my-1 font-semibold">
             <div class="pr-2 text-gray-500">x</div>
-            <%= link_to 'Places', admin_root_path %>
+            <%= link_to 'Places', admin_places_path %>
           </li>
         </ul>
       </div>
 
-      <div class="w-3/5 px-4">
+      <div class="w-3/5 px-4 m-4">
+        <h1><%= page_meta.title.simple %></h1>
         <%= yield %>
       </div>
     </div>
