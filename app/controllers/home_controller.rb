@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
 class HomeController < ApplicationController
-  def index; end
+  def index
+    @places = Place.where(active: true)
+  end
 end

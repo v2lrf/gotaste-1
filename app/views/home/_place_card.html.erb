@@ -1,0 +1,12 @@
+<div class="p-3 w-full sm:w-1/2 lg:w-1/3">
+  <%= link_to place_path(place.slug), class: 'inline-flex flex-col rounded shadow hover:shadow-md' do %>
+    <img class="rounded-t"  src="https://res.cloudinary.com/dkrjpli3y/image/upload/c_fill,h_350,w_600/<%= place.slug %>">
+    <div class="p-4 border-b border-dotted">
+      <div class="font-medium"><%= place.name %></div>
+      <div class=" text-gray-600"><%= place.short_description %></div>
+    </div>
+    <div class="px-4 py-2 text-xs text-gray-600">
+      <%= t(".#{place.category}") %>
+    </div>
+  <% end %>
+</div>

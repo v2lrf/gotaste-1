@@ -6,5 +6,12 @@ Rails.application.routes.draw do
              path_names:  { sign_in: 'login', sign_up: 'register' },
              controllers: { registrations: 'registrations' }
 
+  namespace :admin do
+    root to: 'home#index'
+    resources :places, only: :index
+  end
+
+  resources :places, only: %i[index show]
+
   root to: 'home#index'
 end
