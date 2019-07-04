@@ -10,19 +10,31 @@ da:
   page_meta:
     titles:
       base: "%{value} – GoTaste"
-      home:
-        index: Smag og gå på opdagelse i vinens verden
-      registrations:
-        new: Kom i gang
+      admin:
+        places:
+          index: Steder
       devise:
         sessions:
           new: Log ind
         passwords:
           new: Glemt adgangskode?
           edit: Ny adgangskode
-      admin:
-        places:
-          index: Steder
+      home:
+        index: Smag og gå på opdagelse i vinens verden
+      registrations:
+        new: Kom i gang
+      places:
+        index: Steder
+        show: "%{name}"
+  places:
+    location:
+      address_first_part: "%{street_name} %{street_number}"
+      address_second_part: "%{postal_code} %{city}"
+      directions: Rutevejledning
+    show:
+      address_header: Adresse
+      information_header: Information
+      opening_hours_header: Åbningstider
   shared:
     navbar:
       places: Steder
