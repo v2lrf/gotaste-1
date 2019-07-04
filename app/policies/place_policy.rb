@@ -38,6 +38,6 @@ class PlacePolicy < ApplicationPolicy
   private
 
   def manage?
-    user && user.admin?
+    user&.admin?
   end
 end
