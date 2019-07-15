@@ -725,10 +725,10 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
-"@prettier/plugin-ruby@^0.12.3":
-  version "0.12.3"
-  resolved "https://registry.yarnpkg.com/@prettier/plugin-ruby/-/plugin-ruby-0.12.3.tgz#b7fb7af86c0f5822ca89a5c7c52946ff439f962c"
-  integrity sha512-2DEsy9L5MW6fPCIHtl5b2ghVSh+J3ZBm+eyXDX8e/crKxVxzSdqMcYAHFdgtaZHMZvXvrFsftCZjw5qkwm3p3A==
+"@prettier/plugin-ruby@^0.13.0":
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/@prettier/plugin-ruby/-/plugin-ruby-0.13.0.tgz#c39c630f33d01731267eea35b4eb469cd307cc29"
+  integrity sha512-usGr/yxvjewlNqeOw7EngvkmlBuHYacS/05yqdT1OanGVSnxbz3BCxDyIXWLchfuxSL/DWyioiucptqW1ZzO9g==
   dependencies:
     prettier "^1.16.4"
 
