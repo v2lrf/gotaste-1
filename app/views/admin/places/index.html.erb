@@ -2,16 +2,18 @@
   <%= link_to 'Add place', admin_places_path %>
 </div>
 
-<div class="w-full bg-white rounded shadow p-4">
-  <table>
-    <thead>
-      <th>Name</th>
+<div class="w-full bg-white rounded shadow p-4 justify-center">
+  <table class="w-full">
+    <thead class="border-b">
+      <th class="text-left p-3 px-5">Name</th>
+      <th class="text-left p-3 px-5">Actions</th>
     </thead>
 
     <tbody>
       <% @places.each do |place| %>
-        <tr>
-          <td><%= place.name %></td>
+        <tr class="border-b hover:bg-orange-100">
+          <td class="p-3 px-5"><%= link_to place.name, edit_admin_place_path(place.slug) %></td>
+          <td class="p-3 px-5"><%= link_to 'Edit', edit_admin_place_path(place.slug) %></td>
         </tr>
       <% end %>
     </tbody>

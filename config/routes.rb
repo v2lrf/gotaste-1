@@ -2,13 +2,13 @@
 
 Rails.application.routes.draw do
   devise_for :users,
-             path:        '',
-             path_names:  { sign_in: 'login', sign_up: 'register' },
+             path: '',
+             path_names: { sign_in: 'login', sign_up: 'register' },
              controllers: { registrations: 'registrations' }
 
   namespace :admin do
     root to: 'home#index'
-    resources :places, only: :index
+    resources :places, only: %i[index edit update]
   end
 
   resources :places, only: %i[index show]
