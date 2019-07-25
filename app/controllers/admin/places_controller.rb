@@ -26,7 +26,15 @@ module Admin
     private
 
     def update_params
-      params.require(:place).permit(:name)
+      params.require(:place).permit(
+        :name,
+        :slug,
+        :email,
+        :website,
+        :phone_number,
+        :description,
+        :short_description
+      )
     end
 
     def find_place_by_slug!

@@ -1,40 +1,38 @@
 <!DOCTYPE html>
 <html lang="da">
   <%= render 'layouts/head' %>
-  <body class="bg-gray-200 font-sans antialiased text-gray-700">
+  <body class=" font-sans antialiased text-gray-700">
 
     <div class="flex items-center py-3 bg-white">
-      <div class="w-1/5 px-4">
+      <div class="w-1/6 px-4">
         <%= render 'shared/logo' %>
       </div>
 
       <div class="w-3/5 px-4">
         <div class="absolute pin-t flex items-center p-3">
         </div>
-        <input type="text" class="w-full p-3 pl-10 text-sm bg-red-200 rounded outline-none" placeholder="Search for users, places or events...">
+        <input type="text" class="w-full p-3 pl-10 text-sm border rounded outline-none" placeholder="Search for users, places or events...">
       </div>
 
-      <div class="w-1/5">
+      <div class="w-1/6">
         <%= link_to 'Log ud', destroy_user_session_path, method: :delete %>
       </div>
     </div>
 
-    <div class="flex">
-      <div class="w-1/5 bg-white px-4 pt-4  min-h-screen">
-        <ul class="list-reset text-md uppercase">
-          <li class="flex items-center py-2 pl-4 my-1 font-semibold">
-            <div class="pr-2 text-gray-500">x</div>
-            <%= link_to 'Home', admin_root_path %>
+    <div class="flex bg-gray-100">
+      <div class="w-1/6 bg-gray-800 min-h-screen">
+        <ul class="list-reset text-md">
+          <li class="flex items-center mt-10 px-4 py-2 my-1 text-gray-500 font-semibold hover:bg-gray-700 hover:text-gray-400">
+            <%= link_to 'Home', admin_root_path, class: "w-full" %>
           </li>
-          <li class="flex items-center py-2 pl-4 my-1 font-semibold">
-            <div class="pr-2 text-gray-500">x</div>
-            <%= link_to 'Places', admin_places_path %>
+          <li class="flex items-center px-4  py-2 my-1 text-gray-500 font-semibold hover:bg-gray-700 hover:text-gray-400">
+            <%= link_to 'Places', admin_places_path, class: "w-full" %>
           </li>
         </ul>
       </div>
 
       <div class="w-3/5 px-4 m-4">
-        <h1><%= page_meta.title.simple %></h1>
+        <h1 class="pb-4"><%= page_meta.title.simple %></h1>
         <%= yield %>
       </div>
     </div>
