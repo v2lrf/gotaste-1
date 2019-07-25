@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: 'home#index'
-    resources :places, only: :index
+    resources :places, only: %i[index edit update]
   end
 
   resources :places, only: %i[index show]

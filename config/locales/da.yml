@@ -13,6 +13,7 @@ da:
       admin:
         places:
           index: Steder
+          edit: Opdater %{name}
       devise:
         sessions:
           new: Log ind
