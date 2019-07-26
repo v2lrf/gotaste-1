@@ -3,6 +3,8 @@
 module Admin
   class BaseController < ApplicationController
     before_action :authenticate_admin!
+    skip_before_action :track_ahoy_visit
+    skip_after_action :track_page_view
 
     layout 'admin'
 
