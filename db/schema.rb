@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_26_200857) do
+ActiveRecord::Schema.define(version: 2019_07_28_065728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -123,6 +123,16 @@ ActiveRecord::Schema.define(version: 2019_07_26_200857) do
     t.index ["locatable_type", "locatable_id"], name: "index_locations_on_locatable_type_and_locatable_id"
   end
 
+  create_table "opening_hours", force: :cascade do |t|
+    t.bigint "place_id", null: false
+    t.integer "day_of_week", null: false
+    t.time "opens_at"
+    t.time "closes_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["place_id"], name: "index_opening_hours_on_place_id"
+  end
+
   create_table "places", force: :cascade do |t|
     t.string "name", null: false
     t.string "slug", null: false
@@ -156,5 +166,6 @@ ActiveRecord::Schema.define(version: 2019_07_26_200857) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "opening_hours", "places"
   add_foreign_key "places", "areas"
 end

@@ -9,6 +9,7 @@ class Place < ApplicationRecord
   has_rich_text :description
   belongs_to :area
   has_one :location, as: :locatable, inverse_of: :locatable, dependent: :destroy
+  has_one :opening_hours, dependent: :destroy
 
   accepts_nested_attributes_for :location
 end
