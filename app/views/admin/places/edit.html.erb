@@ -1,4 +1,6 @@
 <div class="w-full bg-white rounded shadow leading-loose">
+  <%= render 'shared/admin/navigation', place: @place %>
+
   <%= form_for @place, url: admin_place_path(@place.slug), html: { class: 'p-8' } do |f| %>
 
     <div class="">
@@ -27,7 +29,7 @@
     </div>
 
     <%= f.fields_for :location do |fl| %>
-    <div class="inline-block mt-2 w-1/2 pr-1">
+      <div class="inline-block mt-2 w-1/2 pr-1">
         <%= fl.label :address, class: 'block text-sm text-gray-00' %>
         <%= fl.text_field :street_name, placeholder: 'Vejnavn', class: 'w-full px-5 py-1 text-gray-700 border rounded' %>
       </div>

@@ -36,9 +36,5 @@ module Admin
         :short_description
       )
     end
-
-    def find_place_by_slug!
-      @place = Place.find_by!(slug: params[:id])
-    end
   end
 end

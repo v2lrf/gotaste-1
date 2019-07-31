@@ -39,12 +39,9 @@
               </div>
               <div>
                 <h3 class="my-2 text-base font-semibold"><%= t('.opening_hours_header') %></h3>
-                <%= render 'opening_hour' %>
-                <%= render 'opening_hour' %>
-                <%= render 'opening_hour' %>
-                <%= render 'opening_hour' %>
-                <%= render 'opening_hour' %>
-                <%= render 'opening_hour' %>
+                <div class="justify-between">
+                  <%= render @place.opening_hours %>
+                </div>
               </div>
             </div>
           </div>
