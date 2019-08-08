@@ -4,6 +4,7 @@
 // that code so it'll be compiled.
 
 import ahoy from 'ahoy.js'
+import LocalTime from 'local-time'
 
 import '../css/application.css'
 
@@ -22,3 +23,5 @@ require('trix')
 require('@rails/actiontext')
 
 ahoy.trackAll()
+
+LocalTime.start()

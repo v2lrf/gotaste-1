@@ -11,5 +11,11 @@ module Admin
     def authenticate_admin!
       redirect_to root_path unless current_user&.admin?
     end
+
+    protected
+
+    def find_place_by_slug!
+      @place = Place.find_by!(slug: params[:id] || params[:place_id])
+    end
   end
 end

@@ -1,0 +1,21 @@
+<div class="w-full bg-white rounded shadow leading-loose">
+  <%= render 'shared/admin/navigation', place: @place %>
+
+  <%= form_for @place, url: { action: :update }, html: { class: 'p-8' } do |f| %>
+    <%= f.fields_for :opening_hours do |opening_hour_form| %>
+      <div class="inline-block mt-2 w-1/2 pr-1">
+        <%= opening_hour_form.time_field :opens_at, class: 'w-full px-5 py-1 text-gray-700 border rounded' %>
+      </div>
+      <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
+        <%= opening_hour_form.time_field :closes_at, class: 'w-full px-5 py-1 text-gray-700 border rounded' %>
+      </div>
+    <% end %>
+
+    <div class="mt-6">
+      <%= f.submit t('.submit'), class: 'px-4 py-1 text-white tracking-wider bg-green-600 rounded' %>
+    </div>
+  <% end %>
+</div>
+
+
+

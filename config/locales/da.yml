@@ -1,4 +1,8 @@
 da:
+  admin:
+    opening_hours:
+      show:
+        submit: Opdater åbningstider
   home:
     index:
       selected_places: Udvalgte steder
@@ -7,10 +11,15 @@ da:
       shop: Vinhandler
       bar:  Bar
       restaurant: Restaurant
+  opening_hours:
+    opening_hour:
+      closed: Lukket
   page_meta:
     titles:
       base: "%{value} – GoTaste"
       admin:
+        opening_hours:
+          show: Åbningstider
         places:
           index: Steder
           edit: Opdater %{name}
@@ -37,5 +46,19 @@ da:
       information_header: Information
       opening_hours_header: Åbningstider
   shared:
+    admin:
+      navigation:
+        opening_hours: Åbningstider
+        profile: Profil
     navbar:
       places: Steder
+  time:
+    day_names:
+      monday: mandag
+      tuesday: tirsdag
+      wednesday: onsdag
+      thursday: torsdag
+      friday: fredag
+      saturday: lørdag
+      sunday: søndag
+

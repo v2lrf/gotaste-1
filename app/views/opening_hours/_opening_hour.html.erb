@@ -1,0 +1,10 @@
+<div class="inline-block w-1/2 pr-1 text-sm">
+  <%= t("time.day_names.#{opening_hour.day_of_week.downcase}")%>
+</div>
+<div class="inline-block -mx-1 pl-1 w-1/2 text-sm text-gray-600">
+  <% if opening_hour.opens_at.present? && opening_hour.closes_at.present? %>
+    <%= local_time(opening_hour.opens_at, format: :time) %> - <%= local_time(opening_hour.closes_at, format: :time) %>
+  <% else %>
+    <%= t(".closed") %>
+  <% end %>
+</div>
