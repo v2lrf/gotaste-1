@@ -1,5 +1,8 @@
 da:
   admin:
+    cover_images:
+      show:
+        submit: Opdater coverbillede
     opening_hours:
       show:
         submit: Opdater åbningstider
@@ -18,6 +21,8 @@ da:
     titles:
       base: "%{value} – GoTaste"
       admin:
+        cover_images:
+          show: Coverbillede
         opening_hours:
           show: Åbningstider
         places:
@@ -48,6 +53,7 @@ da:
   shared:
     admin:
       navigation:
+        cover_image: Coverbillede
         opening_hours: Åbningstider
         profile: Profil
     navbar:
