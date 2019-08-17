@@ -32,7 +32,7 @@ describe 'Admin places', type: :request do
       let(:user) { create :user, :admin }
 
       it 'is a successful request' do
-        get edit_admin_place_path(place.slug)
+        get edit_admin_place_path(place)
         expect(response).to be_successful
       end
     end
@@ -41,7 +41,7 @@ describe 'Admin places', type: :request do
       let(:user) { create :user }
 
       it 'redirects to root' do
-        get edit_admin_place_path(place.slug)
+        get edit_admin_place_path(place)
         expect(response).to redirect_to root_path
       end
     end
@@ -55,13 +55,13 @@ describe 'Admin places', type: :request do
       let(:user) { create :user, :admin }
 
       it 'redirects to the edit page' do
-        patch admin_place_path(place.slug), params: valid_params
-        expect(response).to redirect_to edit_admin_place_path(place.slug)
+        patch admin_place_path(place.id), params: valid_params
+        expect(response).to redirect_to edit_admin_place_path(place.id)
       end
 
       it 'updates the place' do
-        patch admin_place_path(place.slug), params: valid_params
-        expect(Place.find_by(slug: place.slug).name).to eq 'New name'
+        patch admin_place_path(place.id), params: valid_params
+        expect(Place.find(place.id).name).to eq 'New name'
       end
     end
 
@@ -69,7 +69,7 @@ describe 'Admin places', type: :request do
       let(:user) { create :user }
 
       it 'redirects to root' do
-        patch admin_place_path(place.slug), params: valid_params
+        patch admin_place_path(place), params: valid_params
         expect(response).to redirect_to root_path
       end
     end

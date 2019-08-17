@@ -12,7 +12,7 @@ describe 'Admin place hero image', type: :request do
       let(:user) { create :user, :admin }
 
       it 'is a successful request' do
-        get admin_place_cover_image_path(place.slug)
+        get admin_place_cover_image_path(place.id)
         expect(response).to be_successful
       end
     end
@@ -21,7 +21,7 @@ describe 'Admin place hero image', type: :request do
       let(:user) { create :user }
 
       it 'redirects to root' do
-        get admin_place_cover_image_path(place.slug)
+        get admin_place_cover_image_path(place.id)
         expect(response).to redirect_to root_path
       end
     end

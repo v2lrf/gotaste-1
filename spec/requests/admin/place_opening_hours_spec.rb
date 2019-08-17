@@ -12,7 +12,7 @@ describe 'Admin place opening hours', type: :request do
       let(:user) { create :user, :admin }
 
       it 'is a successful request' do
-        get admin_place_opening_hours_path(place.slug)
+        get admin_place_opening_hours_path(place.id)
         expect(response).to be_successful
       end
     end
@@ -21,7 +21,7 @@ describe 'Admin place opening hours', type: :request do
       let(:user) { create :user }
 
       it 'redirects to root' do
-        get admin_place_opening_hours_path(place.slug)
+        get admin_place_opening_hours_path(place.id)
         expect(response).to redirect_to root_path
       end
     end
@@ -33,7 +33,7 @@ describe 'Admin place opening hours', type: :request do
       let!(:opening_hour) { create :opening_hour, place: place }
 
       it 'it redirects to the show page' do
-        put admin_place_opening_hours_path(place.slug),
+        put admin_place_opening_hours_path(place.id),
             params: {
               place: {
                 id:                       place.id,
@@ -47,9 +47,7 @@ describe 'Admin place opening hours', type: :request do
               }
             }
 
-        expect(response).to redirect_to admin_place_opening_hours_path(
-          place.slug
-        )
+        expect(response).to redirect_to admin_place_opening_hours_path(place.id)
       end
     end
 
@@ -57,7 +55,7 @@ describe 'Admin place opening hours', type: :request do
       let(:user) { create :user }
 
       it 'redirects to root' do
-        put admin_place_opening_hours_path(place.slug)
+        put admin_place_opening_hours_path(place.id)
         expect(response).to redirect_to root_path
       end
     end

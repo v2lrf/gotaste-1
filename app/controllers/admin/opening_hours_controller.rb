@@ -2,13 +2,13 @@
 
 module Admin
   class OpeningHoursController < BaseController
-    before_action :find_place_by_slug!, only: %w[show update]
+    before_action :find_place!, only: %w[show update]
 
     def show; end
 
     def update
       if @place.update!(update_params)
-        redirect_to admin_place_opening_hours_path(@place.slug)
+        redirect_to admin_place_opening_hours_path(@place.id)
       else
         render :show
       end

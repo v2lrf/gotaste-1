@@ -2,7 +2,7 @@
 
 module Admin
   class PlacesController < BaseController
-    before_action :find_place_by_slug!, only: %w[edit update]
+    before_action :find_place!, only: %w[edit update]
 
     def index
       @places = policy_scope(Place)
@@ -17,7 +17,7 @@ module Admin
       authorize @place
 
       if @place.update(update_params)
-        redirect_to edit_admin_place_path(@place.slug)
+        redirect_to edit_admin_place_path(@place.id)
       else
         render :edit
       end
