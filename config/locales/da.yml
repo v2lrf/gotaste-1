@@ -3,6 +3,9 @@ da:
     cover_images:
       show:
         submit: Opdater coverbillede
+    events:
+      index:
+        add_event: Tilføj begivenhed
     opening_hours:
       show:
         submit: Opdater åbningstider
@@ -21,8 +24,12 @@ da:
     titles:
       base: "%{value} – GoTaste"
       admin:
-        cover_images:
+        events:
           show: Coverbillede
+        events:
+          index: Begivenheder
+          new: Ny begivenhed
+          edit: Opdater %{name}
         opening_hours:
           show: Åbningstider
         places:
@@ -54,6 +61,7 @@ da:
     admin:
       navigation:
         cover_image: Coverbillede
+        events: Begivenheder
         opening_hours: Åbningstider
         profile: Profil
     navbar:

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_28_065728) do
+ActiveRecord::Schema.define(version: 2019_08_10_132159) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -109,6 +109,21 @@ ActiveRecord::Schema.define(version: 2019_07_28_065728) do
     t.index ["slug"], name: "index_areas_on_slug", unique: true
   end
 
+  create_table "events", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "slug", null: false
+    t.bigint "place_id", null: false
+    t.datetime "begins_at", null: false
+    t.datetime "ends_at"
+    t.string "short_description"
+    t.string "url"
+    t.decimal "price", precision: 8, scale: 2, default: "0.0", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["place_id"], name: "index_events_on_place_id"
+    t.index ["slug"], name: "index_events_on_slug", unique: true
+  end
+
   create_table "locations", force: :cascade do |t|
     t.string "locatable_type", null: false
     t.bigint "locatable_id", null: false
@@ -166,6 +181,7 @@ ActiveRecord::Schema.define(version: 2019_07_28_065728) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "events", "places"
   add_foreign_key "opening_hours", "places"
   add_foreign_key "places", "areas"
 end
