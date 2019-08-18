@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class EventsController < ApplicationController
   after_action :ahoy_track, only: :show
 

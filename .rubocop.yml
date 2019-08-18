@@ -1,3 +1,5 @@
+inherit_from: .rubocop_todo.yml
+
 require: rubocop-rails
 
 AllCops:
@@ -10,7 +12,7 @@ AllCops:
     - config/environments/*
     - config/initializers/*
   DisplayCopNames: true
-  TargetRailsVersion: 5.0
+  TargetRailsVersion: 6.0
 
 Rails:
   Enabled: true
@@ -20,7 +22,3 @@ Documentation:
 
 Metrics/BlockLength:
   ExcludedMethods: ['describe', 'context']
-
-Layout/AlignHash:
-  EnforcedHashRocketStyle: table
-  EnforcedColonStyle: table

@@ -36,12 +36,12 @@ describe 'Admin place opening hours', type: :request do
         put admin_place_opening_hours_path(place.id),
             params: {
               place: {
-                id:                       place.id,
+                id: place.id,
                 opening_hours_attributes: {
                   '0' => {
-                    opens_at:  'something',
+                    opens_at: 'something',
                     closes_at: 'other',
-                    id:        opening_hour.id
+                    id: opening_hour.id
                   }
                 }
               }
