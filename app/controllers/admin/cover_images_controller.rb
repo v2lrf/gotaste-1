@@ -2,7 +2,7 @@
 
 module Admin
   class CoverImagesController < BaseController
-    before_action :find_place_by_slug!, only: %w[show update]
+    before_action :find_place!, only: %w[show update]
 
     def show; end
 

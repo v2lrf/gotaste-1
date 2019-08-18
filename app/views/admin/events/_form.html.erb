@@ -1,0 +1,68 @@
+<%= form_for [:admin, place, event], html: { class: 'p-8' } do |f| %>
+  <div>
+    <%= f.label :name, class: 'block text-sm text-gray-00' %>
+    <%= f.text_field :name, placeholder: 'Name', class: 'w-full px-5 py-1 text-gray-700 border rounded' %>
+  </div>
+
+  <div class="inline-block mt-2 w-1/2 pr-1">
+    <%= f.label :begins_at, class: 'block text-sm text-gray-00' %>
+    <%= f.datetime_field :begins_at, class: 'w-full px-5 py-1 text-gray-700 border rounded' %>
+  </div>
+
+  <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
+    <%= f.label :ends_at, class: 'block text-sm text-gray-00' %>
+    <%= f.datetime_field :ends_at, class: 'w-full px-5 py-1 text-gray-700 border rounded' %>
+  </div>
+
+  <%= f.fields_for :location do |fl| %>
+    <div class="inline-block mt-2 w-1/2 pr-1">
+      <%= fl.label :address, class: 'block text-sm text-gray-00' %>
+      <%= fl.text_field :street_name, placeholder: 'Vejnavn', class: 'w-full px-5 py-1 text-gray-700 border rounded' %>
+    </div>
+    <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
+      <%= fl.text_field :street_number, placeholder: 'Nummer', class: 'w-full px-5 py-1 text-gray-700 border rounded' %>
+    </div>
+    <div class="inline-block mt-2 w-1/4 pr-1">
+      <%= fl.text_field :postal_code, placeholder: 'Postnummer', class: 'w-full px-5 py-1 text-gray-700 border rounded' %>
+    </div>
+    <div class="inline-block mt-2 -mx-1 pl-1 w-3/4">
+      <%= fl.text_field :city, placeholder: 'By', class: 'w-full px-5 py-1 text-gray-700 border rounded' %>
+    </div>
+  <% end %>
+
+  <div class="mt-2">
+    <%= f.label :url, class: 'block text-sm text-gray-00' %>
+    <%= f.text_field :url, placeholder: 'URL', class: 'w-full px-5 py-1 text-gray-700 border rounded' %>
+  </div>
+
+  <div class="mt-2">
+    <%= f.label :price, class: 'block text-sm text-gray-00' %>
+    <%= f.number_field :price, placeholder: 'Pris i DKK', class: 'w-full px-5 py-1 text-gray-700 border rounded' %>
+  </div>
+
+  <div class="mt-2">
+    <%= f.label :short_description, class: 'block text-sm text-gray-00' %>
+    <%= f.text_field :short_description, placeholder: 'Short description', class: 'w-full px-5 py-1 text-gray-700 border rounded' %>
+  </div>
+
+  <div class="mt-2">
+    <%= f.label :description, class: 'block text-sm text-gray-00' %>
+    <%= f.rich_text_area :description, placeholder: 'Long description', class: 'w-full px-5 py-1 text-gray-700 border rounded' %>
+  </div>
+
+  <div class="mt-2">
+    <%= f.label :cover_image, class: 'block text-sm text-gray-00' %>
+
+    <% if event.cover_image.attached? %>
+      <%= image_tag event.cover_image %>
+    <% end %>
+
+    <%= f.file_field :cover_image %>
+  </div>
+
+
+
+  <div class="mt-6">
+    <%= f.submit class: 'px-4 py-1 text-white tracking-wider bg-green-600 rounded' %>
+  </div>
+<% end %>

@@ -1,0 +1,29 @@
+<div class="w-full bg-white rounded shadow leading-loose">
+  <%= render 'shared/admin/navigation', place: @place %>
+  <div class="flex justify-between p-4">
+    <div>Filters</div>
+
+    <div>
+      <%= link_to t('.add_event'), new_admin_place_event_path(@place), class: 'px-4 py-2 text-white tracking-wider bg-gray-600 rounded hover:bg-gray-700' %>
+    </div>
+  </div>
+
+  <div class="justify-center">
+    <table class="w-full">
+      <thead class="border-b">
+        <th class="text-left p-3 px-5">Name</th>
+        <th class="text-left p-3 px-5">Dato</th>
+      </thead>
+      <tbody>
+        <% @events.each do |event| %>
+        <tr class="border-b hover:bg-orange-100">
+          <td class="p-3 px-5"><%= link_to event.name, edit_admin_place_event_path(@place, event) %></td>
+          <td class="p-3 px-5"><%= l event.begins_at %></td>
+          <td class="p-3 px-5"><%= link_to "Edit", edit_admin_place_event_path(@place, event) %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+

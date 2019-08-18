@@ -1,12 +1,15 @@
 
 <ul class="flex border-b">
   <li class="-mb mr-1">
-    <%= link_to t(".profile"), edit_admin_place_path(place.slug), class: "inline-block border-r py-2 px-4 font-semibold text-red-600" %>
+    <%= link_to t(".profile"), edit_admin_place_path(place), class: "inline-block border-r py-2 px-4 font-semibold text-red-600" %>
   </li>
   <li class="mr-1">
-    <%= link_to t(".opening_hours"), admin_place_opening_hours_path(place.slug), class: "inline-block border-r py-2 px-4 font-semibold text-red-400 hover:text-red-500" %>
+    <%= link_to t(".opening_hours"), admin_place_opening_hours_path(place), class: "inline-block border-r py-2 px-4 font-semibold text-red-400 hover:text-red-500" %>
   </li>
   <li class="mr-1">
-    <%= link_to t(".cover_image"), admin_place_cover_image_path(place.slug), class: "inline-block border-r py-2 px-4 font-semibold text-red-400 hover:text-red-500" %>
+    <%= link_to t(".cover_image"), admin_place_cover_image_path(place), class: "inline-block border-r py-2 px-4 font-semibold text-red-400 hover:text-red-500" %>
+  </li>
+  <li class="mr-1">
+    <%= link_to t(".events"), admin_place_events_path(place), class: "inline-block border-r py-2 px-4 font-semibold text-red-400 hover:text-red-500" %>
   </li>
 </ul>

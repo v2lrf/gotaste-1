@@ -9,8 +9,9 @@
       </button>
       <ul class="list-reset sm:flex flex-col sm:flex-row absolute sm:static bg-white pin-t pin-r mt-10 sm:mt-0 rounded shadow-lg sm:shadow-none whitespace-no-wrap z-10 hidden">
         <li><a class="block py-4 px-4 sm:py-1 sm:px-2 text-red-500 font-semibold no-underline hover:bg-red-100 rounded" href="/discover">Gå på opdagelse</a></li>
-        <li><a class="block py-4 px-4 sm:py-1 sm:px-2 text-red-500 font-semibold no-underline hover:bg-red-100 rounded" href="/events">Begivenheder</a></li>
         <li><%= link_to t('.places'), places_path, class: 'block py-4 px-4 sm:py-1 sm:px-2 text-red-500 font-semibold no-underline hover:bg-red-100 rounded' %></li>
+        <li><%= link_to t('.events'), events_path, class: 'block py-4 px-4 sm:py-1 sm:px-2 text-red-500 font-semibold no-underline hover:bg-red-100 rounded' %></li>
+
         <div class="mx-2 my-1 border border-red-100"></div>
         <li>
           <% if user_signed_in? %>

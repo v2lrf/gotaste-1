@@ -3,12 +3,20 @@ da:
     cover_images:
       show:
         submit: Opdater coverbillede
+    events:
+      index:
+        add_event: Tilføj begivenhed
+      edit:
+        goto: Gå til "%{event_name}"
     opening_hours:
       show:
         submit: Opdater åbningstider
+  event_card:
+    address: "%{street_name} %{street_number}"
   home:
     index:
       selected_places: Udvalgte steder
+      selected_events: Udvalgte begivenheder
       all: Alle (%{count})
     place_card:
       shop: Vinhandler
@@ -23,6 +31,10 @@ da:
       admin:
         cover_images:
           show: Coverbillede
+        events:
+          index: Begivenheder
+          new: Ny begivenhed
+          edit: Opdater %{name}
         opening_hours:
           show: Åbningstider
         places:
@@ -34,6 +46,9 @@ da:
         passwords:
           new: Glemt adgangskode?
           edit: Ny adgangskode
+      events:
+        index: Begivenheder
+        show: "%{name}"
       home:
         index: Smag og gå på opdagelse i vinens verden
       registrations:
@@ -48,15 +63,21 @@ da:
       directions: Rutevejledning
     show:
       address_header: Adresse
+      all: Alle (%{count})
       information_header: Information
       opening_hours_header: Åbningstider
   shared:
     admin:
       navigation:
         cover_image: Coverbillede
+        events: Begivenheder
         opening_hours: Åbningstider
         profile: Profil
+    events_row:
+      all: Alle (%{count})
+      upcoming_events: Kommende begivenheder
     navbar:
+      events: Begivenheder
       places: Steder
   time:
     day_names:

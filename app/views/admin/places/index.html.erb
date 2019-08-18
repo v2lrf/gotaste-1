@@ -12,8 +12,8 @@
     <tbody>
       <% @places.each do |place| %>
         <tr class="border-b hover:bg-orange-100">
-          <td class="p-3 px-5"><%= link_to place.name, edit_admin_place_path(place.slug) %></td>
-          <td class="p-3 px-5"><%= link_to 'Edit', edit_admin_place_path(place.slug) %></td>
+          <td class="p-3 px-5"><%= link_to place.name, edit_admin_place_path(place) %></td>
+          <td class="p-3 px-5"><%= link_to 'Edit', edit_admin_place_path(place) %></td>
         </tr>
       <% end %>
     </tbody>

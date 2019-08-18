@@ -27,8 +27,17 @@
         <div class="px-2">
           <div class="flex -mx-2 flex-wrap">
             <div class="pl-2 sm:pr-20 w-full sm:w-4/5">
+              <div class="pb-4">
                 <%= @place.description %>
+              </div>
+              <% if @place.events.upcoming.any? %>
+                <hr>
+                <div class="py-4">
+                  <%= render 'shared/events_row', events: @place.events.upcoming, scope_search_to_place: true %>
+                </div>
+              <% end %>
             </div>
+
             <div class="px-2 w-full sm:w-1/5">
               <h2 class="mb-2 text-xl text-red-600 font-semibold"><%= t('.information_header') %></h2>
               <div>

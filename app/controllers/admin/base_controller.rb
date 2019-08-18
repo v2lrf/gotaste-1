@@ -14,8 +14,8 @@ module Admin
 
     protected
 
-    def find_place_by_slug!
-      @place = Place.find_by!(slug: params[:id] || params[:place_id])
+    def find_place!
+      @place = Place.find(params[:place_id] || params[:id])
     end
   end
 end
