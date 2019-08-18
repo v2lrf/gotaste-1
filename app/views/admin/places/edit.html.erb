@@ -1,7 +1,7 @@
 <div class="w-full bg-white rounded shadow leading-loose">
   <%= render 'shared/admin/navigation', place: @place %>
 
-  <%= form_for @place, url: admin_place_path(@place.slug), html: { class: 'p-8' } do |f| %>
+  <%= form_for [:admin, @place], html: { class: 'p-8' } do |f| %>
 
     <div class="">
       <%= f.label :name, class: 'block text-sm text-gray-00' %>
