@@ -10,6 +10,12 @@ module Admin
 
     def new
       @event = @place.events.new
+      @event.build_location(
+        street_name: @place.location.street_name,
+        street_number: @place.location.street_number,
+        postal_code: @place.location.postal_code,
+        city: @place.location.city
+      )
     end
 
     def create
@@ -48,7 +54,8 @@ module Admin
         :price,
         :short_description,
         :description,
-        :cover_image
+        :cover_image,
+        location_attributes: %i[street_name street_number postal_code city]
       )
     end
   end
