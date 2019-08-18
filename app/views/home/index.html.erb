@@ -1,4 +1,4 @@
-<div class="py-10">
+<div class="pt-10">
   <div class="flex justify-between">
     <div class="text-2xl font-semibold">
       <%= t('.selected_places') %>
@@ -11,3 +11,19 @@
       <%= render 'place_card', place: place %>
     <% end %>
   </div>
+</div>
+
+<div class="py-2">
+  <div class="flex justify-between">
+    <div class="text-2xl font-semibold">
+      <%= t('.selected_events') %>
+    </div>
+    <%= link_to t('.all', count: @events.count), events_path, class: 'px-4 py-2 border border-gray-300 rounded text-gray-600 font-semibold hover:shadow' %>
+  </div>
+
+  <div class="flex flex-wrap -mx-3 py-5">
+    <% @events.each do |event| %>
+      <%= render 'shared/event_card', event: event, host: event.place %>
+    <% end %>
+  </div>
+</div>

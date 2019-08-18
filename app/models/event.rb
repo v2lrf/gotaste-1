@@ -13,6 +13,8 @@ class Event < ApplicationRecord
 
   before_validation :generate_slug
 
+  scope :upcoming, -> { where('begins_at > ?', Time.current) }
+
   def date
     begins_at&.to_date
   end

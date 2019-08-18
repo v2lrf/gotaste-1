@@ -27,8 +27,26 @@
         <div class="px-2">
           <div class="flex -mx-2 flex-wrap">
             <div class="pl-2 sm:pr-20 w-full sm:w-4/5">
+              <div class="pb-4">
                 <%= @place.description %>
+              </div>
+              <hr>
+              <div class="py-4">
+                <div class="flex justify-between">
+                  <div class="text-2xl font-semibold">
+                    <%= t('.upcoming_events') %>
+                  </div>
+                  <%= link_to t('.all', count: @place.events.upcoming.count), events_path(place: @place.slug), class: 'px-4 py-2 border border-gray-300 rounded text-gray-600 font-semibold hover:shadow' %>
+                </div>
+
+                <div class="flex flex-wrap -mx-3 py-5">
+                  <% @place.events.upcoming.order(:begins_at).each do |event| %>
+                    <%= render 'shared/event_card', event: event, host: @place %>
+                  <% end %>
+                </div>
+              </div>
             </div>
+
             <div class="px-2 w-full sm:w-1/5">
               <h2 class="mb-2 text-xl text-red-600 font-semibold"><%= t('.information_header') %></h2>
               <div>
