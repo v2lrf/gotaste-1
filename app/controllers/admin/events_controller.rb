@@ -5,7 +5,7 @@ module Admin
     before_action :find_place!
 
     def index
-      @events = @place.events
+      @events = @place.events.order(begins_at: :desc)
     end
 
     def new
