@@ -19,7 +19,7 @@ gem 'pundit'
 gem 'rails', '~> 6.0.0.rc2'
 gem 'rails-i18n'
 gem 'rollbar'
-gem 'sass-rails', '~> 5'
+gem 'sass-rails', '~> 6'
 gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 4.0'
 
