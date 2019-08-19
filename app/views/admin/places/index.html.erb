@@ -1,21 +1,26 @@
-<div>
-  <%= link_to 'Add place', admin_places_path %>
-</div>
+<div class="w-full bg-white rounded shadow">
+  <div class="flex justify-between p-4">
+    <div>Filters</div>
+    <div>
+      <%= link_to t('.add_place'), new_admin_place_path, class: 'px-4 py-2 text-white tracking-wider bg-gray-600 rounded hover:bg-gray-700' %>
+    </div>
+  </div>
 
-<div class="w-full bg-white rounded shadow p-4 justify-center">
-  <table class="w-full">
-    <thead class="border-b">
-      <th class="text-left p-3 px-5">Name</th>
-      <th class="text-left p-3 px-5">Actions</th>
-    </thead>
+  <div class="justify-center">
+    <table class="w-full">
+      <thead class="border-b">
+        <th class="text-left p-3 px-5">Name</th>
+        <th class="text-left p-3 px-5">Actions</th>
+      </thead>
 
-    <tbody>
-      <% @places.each do |place| %>
-        <tr class="border-b hover:bg-orange-100">
-          <td class="p-3 px-5"><%= link_to place.name, edit_admin_place_path(place) %></td>
-          <td class="p-3 px-5"><%= link_to 'Edit', edit_admin_place_path(place) %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+      <tbody>
+        <% @places.each do |place| %>
+          <tr class="border-b hover:bg-orange-100">
+            <td class="p-3 px-5"><%= link_to place.name, edit_admin_place_path(place) %></td>
+            <td class="p-3 px-5"><%= link_to 'Edit', edit_admin_place_path(place) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>

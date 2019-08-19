@@ -14,4 +14,12 @@ class Place < ApplicationRecord
   has_many :events, dependent: :nullify
 
   accepts_nested_attributes_for :location, :opening_hours
+
+  before_validation :generate_slug
+
+  private
+
+  def generate_slug
+    self.slug = name.parameterize
+  end
 end

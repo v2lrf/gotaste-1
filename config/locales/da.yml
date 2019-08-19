@@ -11,6 +11,9 @@ da:
     opening_hours:
       show:
         submit: Opdater åbningstider
+    places:
+      index:
+        add_place: Tilføj sted
   event_card:
     address: "%{street_name} %{street_number}"
   home:
@@ -39,6 +42,7 @@ da:
           show: Åbningstider
         places:
           index: Steder
+          new: Nyt sted
           edit: Opdater %{name}
       devise:
         sessions:
