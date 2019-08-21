@@ -8,6 +8,21 @@ module Admin
       @places = policy_scope(Place)
     end
 
+    def new
+      @place = Place.new
+      @place.build_location
+    end
+
+    def create
+      result = PlaceCreator.new(place: Place.new(place_params)).call
+
+      if result.success?
+        redirect_to edit_admin_place_path(result.place)
+      else
+        render :new, error: result.errors
+      end
+    end
+
     def edit
       authorize @place
       page_meta[:name] = @place.name
@@ -16,7 +31,7 @@ module Admin
     def update
       authorize @place
 
-      if @place.update(update_params)
+      if @place.update(place_params)
         redirect_to edit_admin_place_path(@place.id)
       else
         render :edit
@@ -25,15 +40,18 @@ module Admin
 
     private
 
-    def update_params
+    def place_params
       params.require(:place).permit(
         :name,
-        :slug,
+        :category,
         :email,
         :website,
         :phone_number,
         :description,
-        :short_description
+        :short_description,
+        :active,
+        :area_id,
+        location_attributes: %i[street_name street_number postal_code city]
       )
     end
   end
