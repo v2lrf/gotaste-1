@@ -1,0 +1,17 @@
+<div class="flex justify-between pt-6">
+  <div>
+    <p class="text-lg font-medium text-gray-800"><%= t("time.day_names.#{@event.date.strftime("%A").downcase}").capitalize%>, <%= l(@event.date, format: :long) %></p>
+    <h1 class="font-extrabold"><%= @event.name %></h1>
+    <div class="text-gray-800"><%== t(".hosted_by", host: link_to(@event.place.name, place_path(@event.place.slug), class: "no-underline text-red-500 hover:underline")) %></div>
+  </div>
+
+  <div>
+    <div class="pb-4">
+      <p class="text-lg font-semibold tracking-wide">
+        <%= t(".are_you_going") %>
+        <span class="font-normal text-gray-600"><%= number_to_currency(@event.price) %></span>
+      </p>
+    </div>
+    <%= link_to(t('.find_ticket'), @event.url, target: "_blank", class: "px-4 py-2 border border-gray-300 rounded text-gray-600 font-semibold hover:shadow") %>
+  </div>
+</div>

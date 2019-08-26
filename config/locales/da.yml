@@ -14,6 +14,11 @@ da:
     places:
       index:
         add_place: Tilføj sted
+  events:
+    show:
+      are_you_going: Skal du med?
+      find_ticket: Find billet
+      hosted_by: Afholdes af %{host}
   event_card:
     address: "%{street_name} %{street_number}"
   home:
