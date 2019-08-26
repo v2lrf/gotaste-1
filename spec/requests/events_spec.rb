@@ -3,8 +3,6 @@
 require 'rails_helper'
 
 describe 'Events', type: :request do
-  let(:event) { create :event }
-
   describe 'GET index' do
     it 'is a successful request' do
       get events_path
@@ -13,6 +11,8 @@ describe 'Events', type: :request do
   end
 
   describe 'GET show' do
+    let(:event) { create :event }
+
     it 'is a successful request' do
       get event_path(event.slug)
       expect(response).to be_successful

@@ -1,0 +1,40 @@
+<div class="py-6">
+  <%= image_tag @event.cover_image, class: 'shadow-md w-full object-cover mh-200' if @event.cover_image.attached? %>
+</div>
+
+<div class="md:flex">
+  <div class="w-full">
+    <p class="text-lg font-medium text-gray-800"><%= l(@event.date, format: :long).capitalize %></p>
+    <h1 class="font-extrabold"><%= @event.name %></h1>
+    <div class="text-gray-800"><%== t(".hosted_by", host: link_to(@event.place.name, place_path(@event.place.slug), class: "no-underline text-red-500 hover:underline")) %></div>
+  </div>
+
+  <div class="md:w-2/5 py-6 md:p-0">
+    <div class="pb-4">
+      <p class="text-lg font-semibold tracking-wide">
+        <%= t(".are_you_going") %>
+        <span class="font-normal text-gray-600"><%= number_to_currency(@event.price) %></span>
+      </p>
+    </div>
+    <%= link_to(t('.find_ticket'), @event.url, target: "_blank", rel: "noopener noreferrer", class: "rounded-lg px-4 md:px-5 xl:px-4 py-3 md:py-4 xl:py-3 bg-green-500 hover:bg-green-600 md:text-lg xl:text-base text-white font-semibold leading-tight shadow-md") %>
+  </div>
+</div>
+
+<div class="md:flex py-4">
+  <div class="pb-4 w-full">
+    <h2 class="my-2 text-xl font-semibold"><%= t(".details") %></h2>
+    <%= @event.description %>
+  </div>
+
+  <div class="px-2 md:w-2/5">
+    <h2 class="mb-2 text-xl text-red-600 font-semibold"><%= t('.information_header') %></h2>
+    <%= render 'time_of_event', begins_at: @event.begins_at, ends_at: @event.ends_at %>
+    <%= render 'shared/location', location: @event.location %>
+  </div>
+</div>
+
+<hr class="my-4">
+
+<div class="py-4">
+  <%= render 'shared/events_row', header: :other_events, events: Event.upcoming.where.not(place_id: @event.place.id), scope_search_to_place: false %>
+</div>

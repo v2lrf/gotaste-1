@@ -14,6 +14,18 @@ da:
     places:
       index:
         add_place: Tilføj sted
+  date:
+    formats:
+      long: "%A d. %d. %B, %Y"
+  events:
+    show:
+      are_you_going: Skal du med?
+      details: Detaljer
+      find_ticket: Find billet
+      information_header: Information
+      hosted_by: Afholdes af %{host}
+    time_of_event:
+        title: Tidspunkt
   event_card:
     address: "%{street_name} %{street_number}"
   home:
@@ -25,7 +37,7 @@ da:
       shop: Vinhandler
       bar:  Bar
       restaurant: Restaurant
-  opening_hours:
+      opening_hours:
     opening_hour:
       closed: Lukket
   page_meta:
@@ -61,12 +73,7 @@ da:
         index: Steder
         show: "%{name}"
   places:
-    location:
-      address_first_part: "%{street_name} %{street_number}"
-      address_second_part: "%{postal_code} %{city}"
-      directions: Rutevejledning
     show:
-      address_header: Adresse
       all: Alle (%{count})
       information_header: Information
       opening_hours_header: Åbningstider
@@ -80,6 +87,19 @@ da:
     events_row:
       all: Alle (%{count})
       upcoming_events: Kommende begivenheder
+      other_events: Foreslåede begivenheder
+    footer:
+      about: Om GoTaste
+      contact: Kontakt
+      copyright: © %{year} GoTaste
+      events: Begivenheder
+      places: Steder
+      terms: Vilkår og betingelser
+    location:
+      address_header: Adresse
+      address_first_part: "%{street_name} %{street_number}"
+      address_second_part: "%{postal_code} %{city}"
+      directions: Rutevejledning
     navbar:
       events: Begivenheder
       places: Steder

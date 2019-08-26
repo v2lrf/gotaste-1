@@ -7,7 +7,8 @@ describe Event do
     let(:event) { create(:event) }
 
     it 'returns the date from the begins_at and the name as a slug' do
-      expect(event.slug).to eq "#{event.begins_at.to_date}-blindtasting"
+      expect(event.slug)
+        .to eq "#{event.begins_at.to_date}-#{event.name.parameterize}"
     end
   end
 

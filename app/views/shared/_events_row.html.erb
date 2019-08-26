@@ -1,7 +1,7 @@
 <div class="flex justify-between">
-  <div class="text-2xl font-semibold">
-    <%= t('.upcoming_events') %>
-  </div>
+  <h2 class="text-2xl font-semibold">
+    <%= t(".#{header}") %>
+  </h2>
   <%=
     link_to t('.all', count: events.count),
             scope_search_to_place ? events_path(place: events.first.place.slug) : events_path,

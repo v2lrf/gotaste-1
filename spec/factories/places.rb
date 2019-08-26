@@ -6,11 +6,11 @@ FactoryBot.define do
       "Wine shop #{n}"
     end
 
-    sequence :slug do |n|
-      "wine-shop#{n}"
-    end
-
     category { :shop }
     area
+
+    after(:create) do |place|
+      create(:location, locatable: place)
+    end
   end
 end
