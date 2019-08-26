@@ -37,7 +37,7 @@ da:
       shop: Vinhandler
       bar:  Bar
       restaurant: Restaurant
-  opening_hours:
+      opening_hours:
     opening_hour:
       closed: Lukket
   page_meta:
@@ -88,6 +88,13 @@ da:
       all: Alle (%{count})
       upcoming_events: Kommende begivenheder
       other_events: Foreslåede begivenheder
+    footer:
+      about: Om GoTaste
+      contact: Kontakt
+      copyright: © %{year} GoTaste
+      events: Begivenheder
+      places: Steder
+      terms: Vilkår og betingelser
     location:
       address_header: Adresse
       address_first_part: "%{street_name} %{street_number}"
