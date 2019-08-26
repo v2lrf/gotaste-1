@@ -1,0 +1,10 @@
+<h3 class="my-2 text-base font-semibold"><%= t('.title') %></h3>
+<div class="my-2 text-sm">
+  <div>
+    <%= l(@event.date, format: :long).capitalize %>
+  </div>
+
+  <div>
+    <%= local_time(begins_at, format: :time) %> - <%= local_time(ends_at, format: :time) %>
+  </div>
+</div>
