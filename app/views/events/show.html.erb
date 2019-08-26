@@ -26,12 +26,15 @@
     <%= @event.description %>
   </div>
 
-  <div class="px-2 w-full md:w-2/5">
+  <div class="px-2 md:w-2/5">
     <h2 class="mb-2 text-xl text-red-600 font-semibold"><%= t('.information_header') %></h2>
-    <div>
-      <%= render 'time_of_event', begins_at: @event.begins_at, ends_at: @event.ends_at %>
-      <%= render 'shared/location', location: @event.location %>
-    </div>
-    <div>
+    <%= render 'time_of_event', begins_at: @event.begins_at, ends_at: @event.ends_at %>
+    <%= render 'shared/location', location: @event.location %>
   </div>
+</div>
+
+<hr class="my-4">
+
+<div class="py-4">
+  <%= render 'shared/events_row', header: :other_events, events: Event.upcoming.where.not(place_id: @event.place.id), scope_search_to_place: false %>
 </div>

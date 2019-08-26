@@ -33,7 +33,7 @@
               <% if @place.events.upcoming.any? %>
                 <hr>
                 <div class="py-4">
-                  <%= render 'shared/events_row', events: @place.events.upcoming, scope_search_to_place: true %>
+                  <%= render 'shared/events_row', header: :upcoming_events, events: @place.events.upcoming, scope_search_to_place: true %>
                 </div>
               <% end %>
             </div>

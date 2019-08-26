@@ -6,7 +6,7 @@
   <div class="text-gray-600"><%= t('.address_second_part', postal_code: location.postal_code, city: location.city) %></div>
 </div>
 <div>
-  <a href="https://www.google.com/maps/search/?api=1&amp;query=55.671264,12.549644" target="_blank" rel="noopener noreferrer" class="text-sm no-underline text-red-500 hover:underline">
+  <a href="https://www.google.com/maps/search/?api=1&amp;query=<%= location.latitude %>,<%= location.longitude %>" target="_blank" rel="noopener noreferrer" class="text-sm no-underline text-red-500 hover:underline">
     <%= t('.directions') %>
   </a>
 </div>

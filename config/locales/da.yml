@@ -87,6 +87,7 @@ da:
     events_row:
       all: Alle (%{count})
       upcoming_events: Kommende begivenheder
+      other_events: Foreslåede begivenheder
     location:
       address_header: Adresse
       address_first_part: "%{street_name} %{street_number}"
