@@ -41,11 +41,7 @@ da:
       selected_places: Udvalgte steder
       selected_events: Udvalgte begivenheder
       all: Alle (%{count})
-    place_card:
-      shop: Vinhandler
-      bar:  Bar
-      restaurant: Restaurant
-      opening_hours:
+  opening_hours:
     opening_hour:
       closed: Lukket
   page_meta:
@@ -85,6 +81,10 @@ da:
       all: Alle (%{count})
       information_header: Information
       opening_hours_header: Åbningstider
+  place_categories:
+    shop: Vinhandler
+    bar:  Bar
+    restaurant: Restaurant
   shared:
     admin:
       navigation:
