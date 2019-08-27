@@ -68,4 +68,7 @@ RSpec.configure do |config|
 
   config.include FactoryBot::Syntax::Methods
   config.include Devise::Test::IntegrationHelpers, type: :request
+  config.include AbstractController::Translation
+
+  config.before(:suite) { I18n.locale = :da }
 end
