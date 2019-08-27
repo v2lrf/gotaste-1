@@ -17,6 +17,13 @@ da:
   date:
     formats:
       long: "%A d. %d. %B, %Y"
+  devise:
+    registrations:
+      new:
+        submit: Opret profil
+    sessions:
+      new:
+        sign_up: Opret en
   events:
     show:
       are_you_going: Skal du med?
