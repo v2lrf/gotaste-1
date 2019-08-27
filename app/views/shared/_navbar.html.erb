@@ -15,9 +15,9 @@
         <div class="mx-2 my-1 border border-red-100"></div>
         <li>
           <% if user_signed_in? %>
-            <%= link_to 'Log ud', destroy_user_session_path, class: 'block py-4 px-4 sm:py-1 sm:px-2 text-red-500 font-semibold no-underline hover:bg-red-100 rounded', method: :delete %>
+            <%= link_to t('.sign_out'), destroy_user_session_path, class: 'block py-4 px-4 sm:py-1 sm:px-2 text-red-500 font-semibold no-underline hover:bg-red-100 rounded', method: :delete %>
           <% else %>
-            <%= link_to 'Log ind', new_user_session_path, class: 'block py-4 px-4 sm:py-1 sm:px-2 text-red-500 font-semibold no-underline hover:bg-red-100 rounded' %>
+            <%= link_to t('.sign_in'), new_user_session_path, class: 'block py-4 px-4 sm:py-1 sm:px-2 text-red-500 font-semibold no-underline hover:bg-red-100 rounded' %>
           <% end %>
         </li>
       </ul>

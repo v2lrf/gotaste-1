@@ -103,6 +103,8 @@ da:
     navbar:
       events: Begivenheder
       places: Steder
+      sign_in: Log ind
+      sign_out: Log ud
   time:
     day_names:
       monday: mandag
