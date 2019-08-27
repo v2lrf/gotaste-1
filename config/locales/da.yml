@@ -24,6 +24,7 @@ da:
     sessions:
       new:
         sign_up: Opret en
+        submit: Log ind
   events:
     show:
       are_you_going: Skal du med?
