@@ -19,15 +19,33 @@ describe 'Users', type: :system do
   end
 
   scenario 'Users can go to signin and login' do
-    user = create(:user)
     visit root_path
+
+    login_user
+
+    expect(page).to have_text(t('shared.navbar.sign_out'))
+  end
+
+  scenario 'Users can logout' do
+    visit root_path
+
+    login_user
+
+    click_link(t('shared.navbar.sign_out'))
+
+    expect(page).to have_text(t('shared.navbar.sign_in'))
+  end
+
+  private
+
+  def login_user
+    user = create(:user)
 
     click_link(t('shared.navbar.sign_in'))
 
     fill_in 'user_email', with: user.email
     fill_in 'user_password', with: attributes_for(:user)[:password]
-    click_button(t('devise.sessions.new.submit'))
 
-    expect(page).to have_text(t('shared.navbar.sign_out'))
+    click_button(t('devise.sessions.new.submit'))
   end
 end
