@@ -33,6 +33,14 @@ blocks:
       secrets:
         - name: secrets
 
+      prologue:
+        commands:
+          - cache restore
+
+      epilogue:
+        commands:
+          - cache store
+
       jobs:
         - name: Bundle
           commands:
@@ -42,23 +50,14 @@ blocks:
           # remote repository.
           # See https://docs.semaphoreci.com/article/54-toolbox-reference#libcheckout
           - checkout
-          # Restore dependencies from cache.
-          # Read about caching: https://docs.semaphoreci.com/article/54-toolbox-reference#cache
-          - cache restore gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock),gems-$SEMAPHORE_GIT_BRANCH-,gems-master-
-          # Set Ruby version:
           - sem-version ruby 2.6.2
           - bundle install --deployment -j 4 --path vendor/bundle
-          # Store the latest version of dependencies in cache,
-          # to be used in next blocks and future workflows:
-          - cache store gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock) vendor/bundle
 
         - name: Yarn
           commands:
           - checkout
           - nvm use
-          - cache restore node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum yarn.lock),node-modules-$SEMAPHORE_GIT_BRANCH,node-modules-master
           - yarn install
-          - cache store node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum yarn.lock) node_modules
 
   - name: Linting
     task:
@@ -74,7 +73,6 @@ blocks:
         - name: RuboCop
           commands:
             - checkout
-            - cache restore gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock),gems-$SEMAPHORE_GIT_BRANCH-,gems-master-
             # Bundler requires `install` to run even though cache has been
             # restored, but generally this is not the case with other package
             # managers. Installation will not actually run and command will
@@ -87,7 +85,6 @@ blocks:
           commands:
             - checkout
             - nvm use
-            - cache restore node-modules-$SEMAPHORE_GIT_BRANCH-$(checksum yarn.lock),node-modules-$SEMAPHORE_GIT_BRANCH,node-modules-master
             - yarn lint
 
 
@@ -109,7 +106,6 @@ blocks:
         - name: RSpec
           commands:
             - checkout
-            - cache restore gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock),gems-$SEMAPHORE_GIT_BRANCH-,gems-master-
             # Start Postgres database service.
             - sem-service start postgres
             - cat /dev/null > config/database.yml
