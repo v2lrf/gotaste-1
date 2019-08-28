@@ -73,6 +73,8 @@ da:
         index: Smag og gå på opdagelse i vinens verden
       registrations:
         new: Kom i gang
+      pages:
+        about: Om GoTaste
       places:
         index: Steder
         show: "%{name}"
