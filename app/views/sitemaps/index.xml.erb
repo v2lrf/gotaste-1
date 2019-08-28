@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc><%= @host %></loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc><%= "#{@host}#{places_path}" %></loc>
+    <lastmod><%= Place.maximum(:updated_at) %></lastmod>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc><%= "#{@host}#{events_path}" %></loc>
+    <lastmod><%= Event.maximum(:updated_at) %></lastmod>
+    <changefreq>daily</changefreq>
+  </url>
+  <% @places.each do |place| %>
+     <url>
+        <loc><%= "#{@host}#{place_path(place.slug)}" %></loc>
+        <lastmod><%= place.updated_at %></lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+  <% end %>
+
+  <% @events.each do |event| %>
+     <url>
+        <loc><%= "#{@host}#{event_path(event.slug)}" %></loc>
+        <lastmod><%= event.updated_at %></lastmod>
+        <changefreq>daily</changefreq>
+     </url>
+   <% end %>
+
+  <url>
+    <loc><%= "#{@host}#{about_path}" %></loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc><%= "#{@host}#{new_user_session_path}" %></loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc><%= "#{@host}#{new_user_registration_path}" %></loc>
+    <changefreq>weekly</changefreq>
+  </url>
+</urlset>
