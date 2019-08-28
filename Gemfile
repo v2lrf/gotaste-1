@@ -8,7 +8,7 @@ ruby '2.6.2'
 gem 'activestorage-cloudinary-service'
 gem 'ahoy_matey'
 gem 'bootsnap', '>= 1.4.2', require: false
-gem 'cloudinary', require: false
+gem 'cloudinary'
 gem 'devise'
 gem 'geocoder'
 gem 'local_time'
