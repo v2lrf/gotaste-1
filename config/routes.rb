@@ -18,5 +18,7 @@ Rails.application.routes.draw do
   resources :events, only: %i[index show], param: :event_slug
   resources :places, only: %i[index show]
 
+  get '/about', to: 'pages#about', as: :about
+
   root to: 'home#index'
 end
