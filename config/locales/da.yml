@@ -17,6 +17,14 @@ da:
   date:
     formats:
       long: "%A d. %d. %B, %Y"
+  devise:
+    registrations:
+      new:
+        submit: Opret profil
+    sessions:
+      new:
+        sign_up: Opret en
+        submit: Log ind
   events:
     show:
       are_you_going: Skal du med?
@@ -33,11 +41,7 @@ da:
       selected_places: Udvalgte steder
       selected_events: Udvalgte begivenheder
       all: Alle (%{count})
-    place_card:
-      shop: Vinhandler
-      bar:  Bar
-      restaurant: Restaurant
-      opening_hours:
+  opening_hours:
     opening_hour:
       closed: Lukket
   page_meta:
@@ -77,6 +81,10 @@ da:
       all: Alle (%{count})
       information_header: Information
       opening_hours_header: Åbningstider
+  place_categories:
+    shop: Vinhandler
+    bar:  Bar
+    restaurant: Restaurant
   shared:
     admin:
       navigation:
@@ -103,6 +111,8 @@ da:
     navbar:
       events: Begivenheder
       places: Steder
+      sign_in: Log ind
+      sign_out: Log ud
   time:
     day_names:
       monday: mandag
