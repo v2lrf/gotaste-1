@@ -25,8 +25,11 @@ en:
         subject: "Unlock instructions"
       email_changed:
         subject: "Email Changed"
+        body: We're contacting you to notify you that your email is being changed to %{email}.
       password_change:
-        subject: "Password Changed"
+        subject: Password changed
+        part_1: Your password has been changed.
+        part_2: If you didn't change your password, contact %{link} so we can make sure your account is safe.
     omniauth_callbacks:
       failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
       success: "Successfully authenticated from %{kind} account."

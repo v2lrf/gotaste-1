@@ -1,0 +1,5 @@
+<% if @resource.try(:unconfirmed_email?) %>
+  <%= t('.body', email: @resource.unconfirmed_email) %>
+<% else %>
+  <%= t('.body', email: @resource.email) %>
+<% end %>

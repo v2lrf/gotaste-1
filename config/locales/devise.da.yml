@@ -52,9 +52,15 @@ da:
         subject: 'Bekræftelsesinstruktioner'
       reset_password_instructions:
         subject: 'Nulstil din adgangskode'
+        part_1: Ingen grund til bekymring. Du kan nulstille din adgangskode til GoTaste ved at klikke på linket nedenfor.
+        link_text: Nulstil adgangskode
+        part_2: Hvis du ikke har bedt om at nulstille din adgangskode, kan du blot slette denne email.
       unlock_instructions:
         subject: 'Genåbning af konto'
       password_change:
         subject: 'Adgangskode ændret'
+        part_1: Din adgangskode er blevet ændret.
+        part_2: Hvis du ikke har ændret din adgangskode, bedes du kontakte %{link}, så vi kan sikre os, at din konto er i sikkerhed.
       email_changed:
         subject: 'E-mail ændret'
+        body: Din email er blevet ændret til %{email}.
