@@ -14,6 +14,7 @@ gem 'geocoder'
 gem 'local_time'
 gem 'page_meta'
 gem 'pg', '>= 0.18', '< 2.0'
+gem 'postmark-rails'
 gem 'puma', '~> 4.1'
 gem 'pundit'
 gem 'rails', '~> 6.0'
@@ -35,6 +36,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'letter_opener'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'

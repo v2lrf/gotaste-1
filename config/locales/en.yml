@@ -1,0 +1,10 @@
+en:
+  layouts:
+    mailer:
+      hello: Hello!
+      best_regards: "All the best,<br>The GoTaste Team"
+      best_regards_one_line: "All the best, \nThe GoTaste Team"
+  users_mailer:
+    welcome:
+      subject: Welcome to GoTaste
+      body: Welcome, %{first_name}!

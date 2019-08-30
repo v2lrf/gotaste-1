@@ -6,7 +6,7 @@ class RegistrationsController < Devise::RegistrationsController
   def create
     super
 
-    # UsersMailer.welcome(user: resource).deliver_later if resource.save
+    UsersMailer.welcome(user: resource).deliver_later if resource.save
   end
 
   private

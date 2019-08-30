@@ -41,6 +41,11 @@ da:
       selected_places: Udvalgte steder
       selected_events: Udvalgte begivenheder
       all: Alle (%{count})
+  layouts:
+    mailer:
+      hello: Hej!
+      best_regards: "De bedste hilsner,<br>Teamet bag GoTaste"
+      best_regards_one_line: "De bedste hilsner, \nTeamet bag GoTaste"
   opening_hours:
     opening_hour:
       closed: Lukket
@@ -124,4 +129,7 @@ da:
       friday: fredag
       saturday: lørdag
       sunday: søndag
-
+  users_mailer:
+    welcome:
+      subject: Velkommen til GoTaste
+      body: "Velkommen til GoTaste, %{first_name}! Du kan nu logge ind og få adgang til alle de fordele der er ved at være medlem."
