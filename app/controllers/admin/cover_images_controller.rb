@@ -8,7 +8,7 @@ module Admin
 
     def update
       if @place.update(update_params)
-        redirect_to admin_place_cover_image_path(@place.slug)
+        redirect_to admin_place_cover_image_path(@place)
       else
         render :show
       end

@@ -1,7 +1,7 @@
 <div class="w-full bg-white rounded shadow leading-loose">
   <%= render 'shared/admin/navigation', place: @place %>
 
-  <%= form_for [:admin, @place], html: { class: 'p-8' } do |f| %>
+  <%= form_for @place, url: { action: :update }, html: { class: 'p-8' } do |f| %>
 
     <% if @place.cover_image.attached? %>
       <%= image_tag @place.cover_image %>
