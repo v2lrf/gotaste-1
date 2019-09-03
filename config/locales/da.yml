@@ -16,6 +16,7 @@ da:
         add_place: Tilføj sted
   date:
     formats:
+      medium: "%A d. %d. %B"
       long: "%A d. %d. %B, %Y"
   devise:
     registrations:
