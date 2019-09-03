@@ -1,5 +1,5 @@
 <div class="py-6">
-  <%= image_tag @event.cover_image, class: 'shadow-md w-full object-cover mh-200' if @event.cover_image.attached? %>
+  <%= cl_image_tag(@event.cover_image.key, width: 800, height: 300, crop: :fill, quality: 100, class: 'shadow-md w-full object-cover mh-200' ) if @event.cover_image.attached? %>
 </div>
 
 <div class="md:flex">

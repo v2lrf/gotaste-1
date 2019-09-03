@@ -1,58 +1,46 @@
-<div class="">
-  <%= image_tag @place.cover_image, class: 'shadow-md w-full object-cover mh-200' if @place.cover_image.attached? %>
-  <div class="container mx-auto px-4 px-0">
-    <div class="relative px-4 -mt-32 sm:-mt-48">
-      <div class="p-4">
-        <h1 class="font-bold text-3xl sm:text-6xl text-white"><%= @place.name %></h1>
+<div class="pb-2 md:pb-6">
+  <%= cl_image_tag(@place.cover_image.key, width: 800, height: 250, crop: :fill, quality: 100, class: 'shadow-md w-full object-cover' ) if @place.cover_image.attached? %>
+</div>
+
+<div class="md:flex pb-6">
+  <div class="w-full mr-16">
+    <h1 class="font-extrabold text-3xl md:text-5xl"><%= @place.name %></h1>
+    <div class="flex py-2 text-lg pb-8">
+      <div class="pr-4 font-semibold">
+        <%= t("place_categories.#{@place.category}") %>
       </div>
-      <div class="bg-white rounded-lg p-4 shadow-lg">
-        <div class="flex"><span
-            class="inline-block px-2 py-1 leading-none bg-red-lightest text-grey-darkest font-semibold rounded-lg"><%= t("place_categories.#{@place.category}") %></span>
-          <div class="px-2 py-1 text-grey-dark font-semibold"></div>
-        </div>
-        <div class="px-2">
-          <div class="flex -mx-2 flex-wrap">
-            <div class="px-2 w-full sm:w-4/5">
-              <h2 class="my-3 text-xl font-normal max-w-md"><%= @place.short_description %></h2>
-            </div>
-          </div>
-        </div>
-      </div>
+
+      <div class="pr-2" id="rater"></div>
+      <div>10 Anmeldelser</div>
+    </div>
+
+    <div class="text-lg">
+      <%= @place.description %>
     </div>
   </div>
 
-  <div class="p-4">
-    <div class="container mx-auto px-4 px-0 md:px-8">
-      <div class="sm:py-8 leading-loose">
-        <div class="px-2">
-          <div class="flex -mx-2 flex-wrap">
-            <div class="pl-2 sm:pr-20 w-full sm:w-4/5">
-              <div class="pb-4">
-                <%= @place.description %>
-              </div>
-              <% if @place.events.upcoming.any? %>
-                <hr>
-                <div class="py-4">
-                  <%= render 'shared/events_row', header: :upcoming_events, events: @place.events.upcoming, scope_search_to_place: true %>
-                </div>
-              <% end %>
-            </div>
-
-            <div class="px-2 w-full sm:w-1/5">
-              <h2 class="mb-2 text-xl text-red-600 font-semibold"><%= t('.information_header') %></h2>
-              <div>
-                <%= render 'shared/location', location: @place.location %>
-              </div>
-              <div>
-                <h3 class="my-2 text-base font-semibold"><%= t('.opening_hours_header') %></h3>
-                <div class="justify-between">
-                  <%= render @place.opening_hours %>
-                </div>
-              </div>
-            </div>
-          </div>
+  <div class="md:w-2/5 py-6 md:p-0">
+    <div class="pb-4">
+      <h2 class="mb-2 text-xl text-red-600 font-semibold"><%= t('.information_header') %></h2>
+      <%= render 'shared/location', location: @place.location %>
+      <div>
+        <h3 class="my-2 text-base font-semibold"><%= t('.opening_hours_header') %></h3>
+        <div class="justify-between">
+          <%= render @place.opening_hours %>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<div>
+  <% if @place.events.upcoming.any? %>
+  <hr>
+  <div class="py-4">
+    <%= render 'shared/events_row', header: :upcoming_events, events: @place.events.upcoming, scope_search_to_place: true %>
+  </div>
+  <% end %>
+</div>
+
+<%= javascript_pack_tag 'rater' %>
+<%= stylesheet_pack_tag 'rater' %>
