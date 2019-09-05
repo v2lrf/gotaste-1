@@ -16,7 +16,9 @@ Rails.application.routes.draw do
   end
 
   resources :events, only: %i[index show], param: :event_slug
-  resources :places, only: %i[index show]
+  resources :places, only: %i[index show], param: :place_slug do
+    resources :reviews, only: %i[create], controller: 'places/reviews'
+  end
 
   get '/about', to: 'pages#about', as: :about
   get '/sitemap', to: 'sitemaps#index'

@@ -88,12 +88,18 @@ da:
     show:
       all: Alle (%{count})
       information_header: Information
+      number_of_reviews:
+        one: "%{count} anmeldelse"
+        other: "%{count} anmeldelser"
       opening_hours_header: Åbningstider
   place_categories:
     shop: Vinhandler
     bar:  Bar
     restaurant: Restaurant
   shared:
+    add_review_row:
+      header: Bedøm stedet
+      submit: Færdig
     admin:
       navigation:
         cover_image: Coverbillede

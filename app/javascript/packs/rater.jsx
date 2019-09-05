@@ -1,5 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Rating from '../components/Rating'
+import Rater from '../components/Rater'
 
-ReactDOM.render(<Rating />, document.getElementById('rater'))
+ReactDOM.render(<Rater />, document.getElementById('rater'))

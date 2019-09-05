@@ -1,0 +1,26 @@
+<div class="md:flex w-full" id="add-review">
+  <div class="w-1/4">
+    <h2 class="text-2xl font-semibold">
+      <%= t(".header") %>
+    </h2>
+  </div>
+
+  <div class="md:w-2/5">
+    <%= form_with(model: [@place, @review], url: place_reviews_path(reviewable.slug, @review)) do |f| %>
+    <div>
+      <div class="pr-2" id="rater"></div>
+    </div>
+
+    <div class="mt-6">
+      <%= f.text_area :content, class: 'border w-full', placeholder: 'Hvad er godt ved stedet? Hvilke vine købte du?' %>
+    </div>
+
+    <div class="mt-4">
+      <%= f.submit t('.submit'), class: 'rounded-lg px-4 py-2 bg-green-500 hover:bg-green-600 md:text-lg xl:text-base text-white font-semibold leading-tight shadow-md' %>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<%= javascript_pack_tag 'rater' %>
+<%= stylesheet_pack_tag 'rater' %>

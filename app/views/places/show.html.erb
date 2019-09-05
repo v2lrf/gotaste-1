@@ -9,9 +9,10 @@
       <div class="pr-4 font-semibold">
         <%= t("place_categories.#{@place.category}") %>
       </div>
+      <span class="fa fa-star checked"></span>
+      <%= fa_icon "camera-retro" %>
 
-      <div class="pr-2" id="rater"></div>
-      <div>10 Anmeldelser</div>
+      <div><%= t('.number_of_reviews', count: @place.reviews.count) %></div>
     </div>
 
     <div class="text-lg">
@@ -33,14 +34,14 @@
   </div>
 </div>
 
-<div>
-  <% if @place.events.upcoming.any? %>
-  <hr>
-  <div class="py-4">
-    <%= render 'shared/events_row', header: :upcoming_events, events: @place.events.upcoming, scope_search_to_place: true %>
-  </div>
-  <% end %>
+<% if @place.events.upcoming.any? %>
+<div class="py-4 border-t border-gray-200">
+  <%= render 'shared/events_row', header: :upcoming_events, events: @place.events.upcoming, scope_search_to_place: true %>
 </div>
+<% end %>
 
-<%= javascript_pack_tag 'rater' %>
-<%= stylesheet_pack_tag 'rater' %>
+<% unless @review.persisted? %>
+  <div class="py-4 border-t border-gray-200">
+    <%= render 'shared/add_review_row', reviewable: @place %>
+  </div>
+<% end %>

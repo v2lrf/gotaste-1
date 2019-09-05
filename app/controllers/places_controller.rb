@@ -6,7 +6,8 @@ class PlacesController < ApplicationController
   def index; end
 
   def show
-    @place = Place.find_by!(slug: params[:id])
+    @place = Place.find_by!(slug: params[:place_slug])
+    @review = current_user.reviews.where(reviewable: @place).first_or_initialize
     page_meta[:name] = @place.name
   end
 

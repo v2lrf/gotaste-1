@@ -12,6 +12,8 @@ class Place < ApplicationRecord
   has_one :location, as: :locatable, inverse_of: :locatable, dependent: :destroy
   has_many :opening_hours, dependent: :destroy
   has_many :events, dependent: :nullify
+  has_many :reviews,
+           as: :reviewable, inverse_of: :reviewable, dependent: :destroy
 
   accepts_nested_attributes_for :location, :opening_hours
 
