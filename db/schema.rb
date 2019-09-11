@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_10_132159) do
+ActiveRecord::Schema.define(version: 2019_09_10_190927) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -124,6 +124,13 @@ ActiveRecord::Schema.define(version: 2019_08_10_132159) do
     t.index ["slug"], name: "index_events_on_slug", unique: true
   end
 
+  create_table "leads", force: :cascade do |t|
+    t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_leads_on_email", unique: true
+  end
+
   create_table "locations", force: :cascade do |t|
     t.string "locatable_type", null: false
     t.bigint "locatable_id", null: false
@@ -165,6 +172,19 @@ ActiveRecord::Schema.define(version: 2019_08_10_132159) do
     t.index ["slug"], name: "index_places_on_slug", unique: true
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "reviewable_type", null: false
+    t.bigint "reviewable_id", null: false
+    t.integer "rating", null: false
+    t.string "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["reviewable_type", "reviewable_id"], name: "index_reviews_on_reviewable_type_and_reviewable_id"
+    t.index ["user_id", "reviewable_id", "reviewable_type"], name: "index_reviews_on_user_id_and_reviewable_id_and_reviewable_type"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "first_name", null: false
     t.string "last_name", null: false
@@ -184,4 +204,5 @@ ActiveRecord::Schema.define(version: 2019_08_10_132159) do
   add_foreign_key "events", "places"
   add_foreign_key "opening_hours", "places"
   add_foreign_key "places", "areas"
+  add_foreign_key "reviews", "users"
 end

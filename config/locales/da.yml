@@ -42,6 +42,12 @@ da:
       selected_places: Udvalgte steder
       selected_events: Udvalgte begivenheder
       all: Alle (%{count})
+    pre_launch:
+      form_placeholder: Indtast din e-mail, så sender vi en invitation når vi er klar
+      header: Smag og gå på oplevelse i vinens verden
+      header_thanks: Tusind tak! Du er for sej!
+      sub_header: Find de bedste vinbarer, vinhandlere og vinsmagninger.
+      sub_header_thanks: Tusind tak for din interesse i GoTaste. Du hører fra os når vi er klar.
   layouts:
     mailer:
       hello: Hej!
