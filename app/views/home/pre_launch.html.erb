@@ -1,24 +1,10 @@
 <div class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
-  <h1 class="my-4 text-3xl md:text-5xl text-gray-200 font-bold leading-tight text-center md:text-left slide-in-bottom-h1">
+  <h1 class="my-4 text-4xl md:text-6xl text-gray-200 font-bold leading-tight text-center md:text-left">
     <%= params[:message] == 'thanks' ? t('.header_thanks') : t('.header') %>
   </h1>
-  <p class="leading-normal text-base md:text-2xl mb-8 text-center md:text-left slide-in-bottom-subtitle">
+  <p class="leading-normal text-xl md:text-2xl mb-8 text-center md:text-left">
     <%= params[:message] == 'thanks' ? t('.sub_header_thanks') : t('.sub_header') %>
   </p>
 
-  <% unless params[:message] == 'thanks' %>
-    <%= form_with url: leads_path, local: true do |form| %>
-      <%=
-        form.email_field :email,
-          class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline',
-          placeholder: t('.form_placeholder')
-      %>
-
-      <%= form.submit "Send" %>
-    <% end %>
-  <% end %>
-</div>
-
-<div class="w-full xl:w-3/5 py-6 overflow-y-hidden">
-  <img class="w-5/6 mx-auto lg:mr-0 slide-in-bottom" src="devices.svg">
+  <p class="leading-normal text-xl font-semibold md:text-2xl mb-8 text-center md:text-left">Kommer snart!</p>
 </div>

@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   include Pundit
 
   before_action :set_locale
-  before_action :redirect_to_pre_launch_page
+  # before_action :redirect_to_pre_launch_page
   after_action :track_page_view
 
   protected
