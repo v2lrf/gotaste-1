@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="da">
+<%= render 'layouts/head' %>
+
+<body class="bg-white font-sans antialiased text-gray-200">
+  <div class="h-screen pb-14 bg-right bg-cover" style="background-image:url('https://res.cloudinary.com/dkrjpli3y/image/upload/w_2000,ar_16:9,c_fill,g_auto/v1568291530/bg_f5y060.jpg');">
+
+    <div class="w-full container mx-auto p-6">
+      <div class="w-full flex items-center justify-between">
+        <%= render 'shared/logo' %>
+      </div>
+    </div>
+
+    <div class="container pt-24 md:pt-48 px-6 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+      <%= yield %>
+
+      <div class="w-full pt-16 pb-6 text-sm text-center md:text-left">
+        <%= link_to t('shared.footer.contact'), 'mailto:info@gotaste.dk', class: 'text-gray-300 no-underline hover:no-underline pr-2' %>
+        <%= link_to t("shared.footer.copyright", year: Time.current.year), root_path, class: 'text-gray-500 no-underline hover:no-underline' %>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+<div class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
+  <h1 class="my-4 text-4xl md:text-6xl text-gray-200 font-bold leading-tight text-center md:text-left">
+    <%= params[:message] == 'thanks' ? t('.header_thanks') : t('.header') %>
+  </h1>
+  <p class="leading-normal text-xl md:text-2xl mb-8 text-center md:text-left">
+    <%= params[:message] == 'thanks' ? t('.sub_header_thanks') : t('.sub_header') %>
+  </p>
+
+  <p class="leading-normal text-xl font-semibold md:text-2xl mb-8 text-center md:text-left">Kommer snart!</p>
+</div>

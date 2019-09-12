@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   devise_for :users,
              path: '',
              path_names: { sign_in: 'login', sign_up: 'register' },
-             controllers: { registrations: 'registrations' }
+             controllers: {
+               registrations: 'registrations', sessions: 'sessions'
+             }
 
   namespace :admin do
     root to: 'home#index'
@@ -16,6 +18,7 @@ Rails.application.routes.draw do
   end
 
   resources :events, only: %i[index show], param: :event_slug
+  resources :leads, only: :create
   resources :places, only: %i[index show]
 
   get '/about', to: 'pages#about', as: :about
