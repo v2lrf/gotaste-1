@@ -1,24 +1,19 @@
-# README
+# 🍷 GoTaste
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+GoTaste is a platform connection businesses with wine enthusiasts.
 
-Things you may want to cover:
+Check out the site at [gotaste.dk](https://gotaste.dk).
 
-* Ruby version
+## Developer setup
+In order for GoTaste to work, you'll need the following dependencies:
 
-* System dependencies
+* Ruby ([version](https://github.com/gotaste/gotaste/blob/master/.ruby-version))
+* PostgreSQL 10
+* Yarn
+* Node (10.14.1)
 
-* Configuration
+## Copyright
 
-* Database creation
+© 2019 GoTaste
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+GoTaste is source-available software. ([license](https://github.com/gotaste/gotaste/blob/master/LICENSE.txt))
