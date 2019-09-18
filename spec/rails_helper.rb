@@ -71,4 +71,12 @@ RSpec.configure do |config|
   config.include AbstractController::Translation
 
   config.before(:suite) { I18n.locale = :da }
+
+  config.before(:each) do |example|
+    unless example.metadata[:site_inactive]
+      site_active = double
+      allow(site_active).to receive(:enabled?).and_return(true)
+      allow(Flipper).to receive(:[]).with(:site_active).and_return(site_active)
+    end
+  end
 end

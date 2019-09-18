@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   before_action :set_locale
   before_action :store_current_location, unless: :devise_controller?
-  # before_action :redirect_to_pre_launch_page
+  before_action :redirect_to_pre_launch_page
   after_action :track_page_view
 
   protected
@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   end
 
   def redirect_to_pre_launch_page
-    return if current_user.admin?
+    return if feature_enabled?(:site_active)
 
     redirect_to root_path
   end
@@ -24,6 +24,10 @@ class ApplicationController < ActionController::Base
     properties = request.path_parameters
     properties[:url] = request.url
     ahoy.track 'Page view', properties
+  end
+
+  def feature_enabled?(feature_name, actor = current_user)
+    Flipper[feature_name].enabled?(actor)
   end
 
   private

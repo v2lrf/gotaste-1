@@ -24,6 +24,7 @@ da:
         submit: Opret profil
     sessions:
       new:
+        header: Log ind
         sign_up: Opret en
         submit: Log ind
   events:
