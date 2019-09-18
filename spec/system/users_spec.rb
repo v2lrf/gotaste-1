@@ -4,7 +4,7 @@ require 'rails_helper'
 
 describe 'Users', type: :system do
   scenario 'Users can go to signup and register' do
-    visit places_path
+    visit root_path
 
     click_link(t('shared.navbar.sign_in'))
     click_link(t('devise.sessions.new.sign_up'))
@@ -19,7 +19,7 @@ describe 'Users', type: :system do
   end
 
   scenario 'Users can go to signin and login' do
-    visit places_path
+    visit root_path
 
     login_user
 
@@ -27,7 +27,7 @@ describe 'Users', type: :system do
   end
 
   scenario 'Users can logout' do
-    visit places_path
+    visit root_path
 
     login_user
 

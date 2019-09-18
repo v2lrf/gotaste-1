@@ -10,4 +10,8 @@ class User < ApplicationRecord
          :validatable
 
   validates :first_name, :last_name, presence: true
+
+  def flipper_id
+    self.class.name + id.to_s
+  end
 end

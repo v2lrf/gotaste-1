@@ -10,6 +10,8 @@ gem 'ahoy_matey'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'cloudinary'
 gem 'devise'
+gem 'flipper-active_record'
+gem 'flipper-ui'
 gem 'geocoder'
 gem 'local_time'
 gem 'page_meta'

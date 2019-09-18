@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  constraints CanAccessFlipperUI do
+    mount Flipper::UI.app(Flipper) => '/flipper'
+  end
+
   devise_for :users,
              path: '',
              path_names: { sign_in: 'login', sign_up: 'register' },
