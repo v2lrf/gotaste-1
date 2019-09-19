@@ -6161,7 +6161,7 @@ promise-inflight@^1.0.1:
   resolved "https://registry.yarnpkg.com/promise-inflight/-/promise-inflight-1.0.1.tgz#98472870bf228132fcbdd868129bad12c3c029e3"
   integrity sha1-mEcocL8igTL8vdhoEputEsPAKeM=
 
-prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -6338,12 +6338,12 @@ react-is@^16.8.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
   integrity sha512-aUk3bHfZ2bRSVFFbbeVS4i+lNPZr3/WM5jT2J5omUVV1zzcs1nAaf3l51ctA5FFvCRbhrH0bdAsRRQddFJZPtA==
 
-react-rater@^5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/react-rater/-/react-rater-5.1.0.tgz#48e420b85a6d625ea74a5f6cc9da483c56cf945f"
-  integrity sha512-mWVL2dbV4Oxl+znJwKzlGOa0widKm7X4dIsmMKs7y5UxSBBW4CP3CucfOvmwc6GX73MfaZTAnYU13fUj2Lm9hQ==
+react-rater@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/react-rater/-/react-rater-5.1.1.tgz#0d066cf816c182277bee8ca48748ca9b9f32feea"
+  integrity sha512-eQYZySMU/jA9y8PVE91u3GTYBs4extBnd0MpRyJ/6IAT8iPSA9liKFMkD54/Y2CKh/Pj0mhMHa0pXQxoSub9xw==
   dependencies:
-    prop-types "^15.6.0"
+    prop-types "^15.7.2"
     react "^16.0.0"
     react-dom "^16.0.0"
 
