@@ -12,7 +12,7 @@ blocks:
         - name: heroku
       env_vars:
         - name: HEROKU_REMOTE
-          value: https://git.heroku.com/gotaste-new-world.git
+          value: https://git.heroku.com/gotaste.git
       jobs:
       - name: Push code
         commands:
