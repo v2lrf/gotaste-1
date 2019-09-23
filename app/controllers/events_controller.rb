@@ -3,7 +3,9 @@
 class EventsController < ApplicationController
   after_action :ahoy_track, only: :show
 
-  def index; end
+  def index
+    @events = Event.upcoming.order(:begins_at)
+  end
 
   def show
     @event = Event.find_by!(slug: params[:event_slug])
