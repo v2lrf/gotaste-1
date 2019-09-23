@@ -5,7 +5,7 @@ module Admin
     before_action :find_place!, only: %w[edit update]
 
     def index
-      @places = policy_scope(Place)
+      @places = policy_scope(Place).order(:name)
     end
 
     def new
