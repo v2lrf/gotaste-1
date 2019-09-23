@@ -1,9 +1,9 @@
-<%= link_to event_path(event.slug), class: 'w-full sm:w-1/3 flex flex-col p-3'  do %>
+<%= link_to event_path(event.slug), class: 'w-full sm:w-1/3 flex flex-col p-3', id: event.slug do %>
   <div class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden flex-1 flex flex-col">
     <%= cl_image_tag(event.cover_image.key, width: 800, height: 400, crop: :fill, quality: 100) if event.cover_image.attached? %>
     <div class="flex-1 flex flex-col">
       <div class="flex-1 p-4">
-        <p class="text-lg font-medium text-gray-800"><%= l(event.date, format: :medium).capitalize %></p>
+        <p class="text-lg font-medium text-gray-800"><%= l(event.begins_at, format: :medium).capitalize %></p>
         <h3 class="mb-2 text-2xl"><%= event.name %></h3>
         <p class="text-gray-700 text-base"><%= event.short_description %> </p>
       </div>

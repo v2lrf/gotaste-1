@@ -16,7 +16,7 @@ da:
         add_place: Tilføj sted
   date:
     formats:
-      medium: "%A d. %d. %B"
+      medium: "%A d. %d. %B kl. %R"
       long: "%A d. %d. %B, %Y"
   devise:
     registrations:
@@ -28,6 +28,8 @@ da:
         sign_up: Opret en
         submit: Log ind
   events:
+    index:
+      header: Begivenheder i København
     show:
       are_you_going: Skal du med?
       details: Detaljer
@@ -137,6 +139,8 @@ da:
       friday: fredag
       saturday: lørdag
       sunday: søndag
+    formats:
+      medium: "%A d. %d. %B kl. %R"
   users_mailer:
     welcome:
       subject: Velkommen til GoTaste
