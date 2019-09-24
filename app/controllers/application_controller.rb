@@ -5,8 +5,8 @@ class ApplicationController < ActionController::Base
 
   before_action :set_locale
   before_action :store_current_location, unless: :devise_controller?
+  before_action :track_page_view
   before_action :redirect_to_pre_launch_page
-  after_action :track_page_view
 
   protected
 
