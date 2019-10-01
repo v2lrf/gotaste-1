@@ -23,6 +23,11 @@ Rails.application.routes.draw do
 
   resources :events, only: %i[index show], param: :event_slug
   resources :leads, only: :create
+  namespace :places do
+    resources :bars, only: :index
+    resources :shops, only: :index
+  end
+
   resources :places, only: %i[index show]
 
   get '/about', to: 'pages#about', as: :about

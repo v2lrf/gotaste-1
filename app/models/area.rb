@@ -13,5 +13,12 @@ class Area < ApplicationRecord
 
   geocoded_by :name
 
+  before_validation :generate_slug
   after_validation :geocode, if: -> { name_changed? } unless Rails.env.test?
+
+  private
+
+  def generate_slug
+    self.slug = name.parameterize
+  end
 end

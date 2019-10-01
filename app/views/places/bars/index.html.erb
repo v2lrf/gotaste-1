@@ -1,9 +1,9 @@
-<%= render 'filtering', active: :all %>
+<%= render 'places/filtering', active: :bars %>
 
 <div class="pt-2">
   <h1><%= t('.header') %></h1>
 
-  <div class="flex flex-wrap -mx-3 py-3" id="all-places">
+  <div class="flex flex-wrap -mx-3 py-3" id="bars">
     <% @places.each do |place| %>
       <%= render 'shared/place_card', place: place %>
     <% end %>
