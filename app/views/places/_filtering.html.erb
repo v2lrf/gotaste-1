@@ -1,0 +1,11 @@
+<%
+  active_classes = 'text-gray-600 py-4 px-6 block hover:text-red-500 focus:outline-none text-red-500 border-b-2 font-medium border-red-500'
+  inactive_classes = 'text-gray-600 py-4 px-6 block hover:text-red-500 focus:outline-none'
+%>
+<div class="flex py-2">
+  <div class="flex">
+    <%= link_to t('.all'), places_path, class: active == :all ? active_classes : inactive_classes %>
+    <%= link_to t('.bars'), places_bars_path, class: active == :bars ? active_classes : inactive_classes %>
+    <%= link_to t('.shops'), places_shops_path, class: active == :shops ? active_classes : inactive_classes %>
+  </div>
+</div>

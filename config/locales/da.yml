@@ -91,9 +91,25 @@ da:
       pages:
         about: Om GoTaste
       places:
+        bars:
+          index: Vinbarer i København
         index: Steder
+        shops:
+          index: Vinhandlere i København
         show: "%{name}"
   places:
+    bars:
+      index:
+        header: Vinbarer i København
+    filtering:
+      all: Alle
+      bars: Vinbarer
+      shops: Vinhandlere
+    index:
+      header: Alle vinsteder i København
+    shops:
+      index:
+        header: Vinhandlere i København
     show:
       all: Alle (%{count})
       information_header: Information

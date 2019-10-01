@@ -1,0 +1,11 @@
+<%= render 'places/filtering', active: :shops %>
+
+<div class="pt-2">
+  <h1><%= t('.header') %></h1>
+
+  <div class="flex flex-wrap -mx-3 py-3" id="shops">
+    <% @places.each do |place| %>
+    <%= render 'shared/place_card', place: place %>
+    <% end %>
+  </div>
+</div>

@@ -3,7 +3,9 @@
 class PlacesController < ApplicationController
   after_action :ahoy_track, only: :show
 
-  def index; end
+  def index
+    @places = Place.where(active: true).order(:name)
+  end
 
   def show
     @place = Place.find_by!(slug: params[:id])

@@ -8,7 +8,7 @@
 
   <div class="flex flex-wrap -m-3 py-3">
     <% @places.first(3).each do |place| %>
-      <%= render 'place_card', place: place %>
+      <%= render 'shared/place_card', place: place %>
     <% end %>
   </div>
 </div>

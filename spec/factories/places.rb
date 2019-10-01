@@ -2,15 +2,11 @@
 
 FactoryBot.define do
   factory :place do
-    sequence :name do |n|
-      "Wine shop #{n}"
-    end
+    sequence(:name) { |n| "Wine place #{n}" }
 
     category { :shop }
     area
 
-    after(:create) do |place|
-      create(:location, locatable: place)
-    end
+    after(:create) { |place| create(:location, locatable: place) }
   end
 end
