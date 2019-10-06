@@ -17,6 +17,9 @@ class Place < ApplicationRecord
 
   before_validation :generate_slug
 
+  scope :bars, -> { where(category: :bar) }
+  scope :shops, -> { where(category: :shop) }
+
   private
 
   def generate_slug

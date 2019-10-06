@@ -3,7 +3,7 @@
 module Places
   class ShopsController < ApplicationController
     def index
-      @places = Place.where(active: true).where(category: :shop).order(:name)
+      @places = Place.where(active: true).shops.order(:name)
     end
   end
 end
