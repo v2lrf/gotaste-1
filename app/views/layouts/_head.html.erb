@@ -3,9 +3,12 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
   <meta name="language" content="da">
   <meta itemprop="language" content="da">
-  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+  <% if page_meta.description.present? %>
+    <meta name="description" content="<%= page_meta.description %>">
+  <% end %>
   <%= render 'shared/favicon' %>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
