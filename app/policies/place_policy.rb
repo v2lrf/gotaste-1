@@ -3,7 +3,7 @@
 class PlacePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      user.admin? ? scope.all : scope.where(active: true)
+      user.admin? ? scope.all : scope.active
     end
   end
 

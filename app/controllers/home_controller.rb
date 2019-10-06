@@ -5,7 +5,7 @@ class HomeController < ApplicationController
   before_action :render_pre_launch
 
   def index
-    @places = Place.where(active: true)
+    @places = Place.active
     @events = Event.upcoming.order(:begins_at)
   end
 

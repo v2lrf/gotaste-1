@@ -4,7 +4,7 @@ class PlacesController < ApplicationController
   after_action :ahoy_track, only: :show
 
   def index
-    @places = Place.where(active: true).order(:name)
+    @places = Place.active.order(:name)
   end
 
   def show
