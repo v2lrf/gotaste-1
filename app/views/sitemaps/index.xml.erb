@@ -10,6 +10,16 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc><%= "#{@host}#{places_bars_path}" %></loc>
+    <lastmod><%= Place.bars.maximum(:updated_at) %></lastmod>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc><%= "#{@host}#{places_shops_path}" %></loc>
+    <lastmod><%= Place.shops.maximum(:updated_at) %></lastmod>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc><%= "#{@host}#{events_path}" %></loc>
     <lastmod><%= Event.maximum(:updated_at) %></lastmod>
     <changefreq>daily</changefreq>
