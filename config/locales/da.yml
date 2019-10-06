@@ -59,44 +59,6 @@ da:
   opening_hours:
     opening_hour:
       closed: Lukket
-  page_meta:
-    titles:
-      base: "%{value} – GoTaste"
-      admin:
-        cover_images:
-          show: Coverbillede
-        events:
-          index: Begivenheder
-          new: Ny begivenhed
-          edit: Opdater %{name}
-        opening_hours:
-          show: Åbningstider
-        places:
-          index: Steder
-          new: Nyt sted
-          edit: Opdater %{name}
-      devise:
-        sessions:
-          new: Log ind
-        passwords:
-          new: Glemt adgangskode?
-          edit: Ny adgangskode
-      events:
-        index: Begivenheder
-        show: "%{name}"
-      home:
-        index: Smag og gå på opdagelse i vinens verden
-      registrations:
-        new: Kom i gang
-      pages:
-        about: Om GoTaste
-      places:
-        bars:
-          index: Vinbarer i København
-        index: Steder
-        shops:
-          index: Vinhandlere i København
-        show: "%{name}"
   places:
     bars:
       index:

@@ -1,0 +1,51 @@
+da:
+  page_meta:
+    descriptions:
+      events:
+        index: Synes du også det er svært at finde vinarrangementer? Vi har samlet en liste med de bedste vinsmagninger for dig.
+      home:
+        index: GoTaste hjælper dig med at finde de bedste vinbarer, vinhandlere og vinsmagninger.
+      places:
+        bars:
+          index: Mangler du et sted at få et godt glas vin, får du her et overblik over Københavns bedste vinbarer.
+        index: Få et overblik over Københavns bedste vinbarer og vinhandlere.
+        shops:
+          index: Find din lokale vinhandler eller gå på opdagelse blandt Københavns mange vinhandlere.
+    titles:
+      base: "%{value} – GoTaste"
+      admin:
+        cover_images:
+          show: Coverbillede
+        events:
+          index: Begivenheder
+          new: Ny begivenhed
+          edit: Opdater %{name}
+        opening_hours:
+          show: Åbningstider
+        places:
+          index: Steder
+          new: Nyt sted
+          edit: Opdater %{name}
+      devise:
+        sessions:
+          new: Log ind
+        passwords:
+          new: Glemt adgangskode?
+          edit: Ny adgangskode
+      events:
+        index: Begivenheder
+        show: "%{name}"
+      home:
+        index: Smag og gå på opdagelse i vinens verden
+      registrations:
+        new: Kom i gang
+      pages:
+        about: Om GoTaste
+      places:
+        bars:
+          index: Vinbarer i København
+        index: Steder
+        shops:
+          index: Vinhandlere i København
+        show: "%{name}"
+
