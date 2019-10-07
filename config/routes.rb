@@ -28,7 +28,9 @@ Rails.application.routes.draw do
     resources :shops, only: :index
   end
 
-  resources :places, only: %i[index show]
+  resources :places, only: %i[index show] do
+    resource :favorite, only: %i[create destroy]
+  end
 
   get '/about', to: 'pages#about', as: :about
   get '/sitemap', to: 'sitemaps#index'

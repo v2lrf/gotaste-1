@@ -73,12 +73,16 @@ da:
       index:
         header: Vinhandlere i København
     show:
+      add_favorite_description: Tilføj til dine favoritsteder
       all: Alle (%{count})
+      favorite: Favorit (%{count})
       information_header: Information
       opening_hours_header: Åbningstider
+      unfavorite: Favorit (%{count})
+      remove_favorite_description: Fjern fra dine favoritsteder
   place_categories:
     shop: Vinhandler
-    bar:  Bar
+    bar:  Vinbar
     restaurant: Restaurant
   shared:
     admin:

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_17_071433) do
+ActiveRecord::Schema.define(version: 2019_10_07_134537) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -124,6 +124,16 @@ ActiveRecord::Schema.define(version: 2019_09_17_071433) do
     t.index ["slug"], name: "index_events_on_slug", unique: true
   end
 
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "place_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["place_id"], name: "index_favorites_on_place_id"
+    t.index ["user_id", "place_id"], name: "index_favorites_on_user_id_and_place_id", unique: true
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
   create_table "flipper_features", force: :cascade do |t|
     t.string "key", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -218,6 +228,8 @@ ActiveRecord::Schema.define(version: 2019_09_17_071433) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "events", "places"
+  add_foreign_key "favorites", "places"
+  add_foreign_key "favorites", "users"
   add_foreign_key "opening_hours", "places"
   add_foreign_key "places", "areas"
   add_foreign_key "reviews", "users"
