@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class RegistrationsController < Devise::RegistrationsController
+  skip_before_action :redirect_to_pre_launch_page
   before_action :configure_permitted_parameters
 
   def create
