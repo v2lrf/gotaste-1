@@ -1,26 +1,27 @@
 <div class="pb-2 md:pb-6">
-  <%= cl_image_tag(cover_image.key, width: 800, height: 250, crop: :fill, quality: 100, class: 'shadow-md w-full object-cover' ) if cover_image.attached? %>
+  <%= cl_image_tag(cover_image.key, width: 1000, height: 400, crop: :fill, quality: 100, class: 'shadow-md w-full object-cover' ) if cover_image.attached? %>
 </div>
 
 <div class="md:flex pb-6">
   <div class="w-full mr-16">
-    <h1 class="font-extrabold text-3xl md:text-5xl"><%= place.name %></h1>
-    <div class="flex py-2 text-lg pb-8">
-      <div class="pr-4 font-semibold">
-        <%= t("place_categories.#{place.category}") %>
+    <div class="flex justify-between items-center">
+      <div class="w-2/3 md:w-3/4">
+        <h1 class="font-extrabold text-3xl md:text-5xl"><%= place.name %></h1>
       </div>
-
-      <div class="pr-2">
+      <div>
         <% if user_has_favorited_place %>
           <%= link_to place_favorite_path(place.slug), method: :delete, title: t('.remove_favorite_description'), class: 'px-4 py-2 border border-gray-300 rounded text-red-400 hover:text-red-200 font-semibold hover:shadow', id: "unfavorite-#{place.slug}" do %>
-            <i class="fas fa-heart"></i> <%= t('.unfavorite', count: number_of_favorites) %>
+            <i class="fas fa-heart"></i> <%= number_of_favorites %>
           <% end %>
         <% else %>
           <%= link_to place_favorite_path(place.slug), method: :create, title: t('.add_favorite_description'), class: 'px-4 py-2 border border-gray-300 rounded text-gray-600 hover:text-red-400 font-semibold hover:shadow', id: "favorite-#{place.slug}" do %>
-            <i class="fas fa-heart"></i> <%= t('.favorite', count: number_of_favorites) %>
+            <i class="fas fa-heart"></i> <%= number_of_favorites %>
           <% end %>
         <% end %>
       </div>
+    </div>
+    <div class="py-2 text-lg pb-8">
+      <%= render 'shared/place_category_label', category: place.category %>
     </div>
 
     <div class="text-lg">
@@ -30,10 +31,14 @@
 
   <div class="md:w-2/5 py-6 md:p-0">
     <div class="pb-4">
-      <h2 class="mb-2 text-xl text-red-600 font-semibold"><%= t('.information_header') %></h2>
       <%= render 'shared/location', location: place.location %>
-      <div>
-        <h3 class="my-2 text-base font-semibold"><%= t('.opening_hours_header') %></h3>
+      <div class="pt-6">
+        <h3 class="my-2 text-base font-semibold">
+          <span class="text-gray-700 pr-1">
+            <i class="fas fa-clock"></i>
+          </span>
+          <%= t('.opening_hours_header') %>
+        </h3>
         <div class="justify-between">
           <%= render place.opening_hours %>
         </div>

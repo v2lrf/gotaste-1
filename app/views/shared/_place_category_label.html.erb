@@ -1,0 +1,9 @@
+<%
+  classes = 'px-3 bg-gray-800 py-2 rounded text-white font-semibold text-sm uppercase tracking-wide'
+%>
+
+<% if category == 'shop' %>
+  <%= link_to t("place_categories.shop"), places_shops_path, class: classes %>
+<% elsif category == 'bar' %>
+  <%= link_to t("place_categories.bar"), places_bars_path, class: classes %>
+<% end %>
