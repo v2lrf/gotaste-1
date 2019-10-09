@@ -31,7 +31,7 @@ group :development, :test do
   gem 'capybara'
   gem 'dotenv-rails'
   gem 'factory_bot_rails'
-  gem 'rspec-rails', '~> 3.8'
+  gem 'rspec-rails', '~> 3.9'
   gem 'rubocop', require: false
   gem 'rubocop-rails'
   gem 'selenium-webdriver'
