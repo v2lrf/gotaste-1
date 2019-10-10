@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class SessionsController < Devise::SessionsController
-  skip_before_action :redirect_to_pre_launch_page
   # before_action :configure_sign_in_params, only: %i[create]
 
   # GET /resource/sign_in
