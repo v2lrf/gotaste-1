@@ -6,28 +6,28 @@
   </url>
   <url>
     <loc><%= "#{@host}#{places_path}" %></loc>
-    <lastmod><%= Place.maximum(:updated_at) %></lastmod>
+    <lastmod><%= Place.maximum(:updated_at).iso8601 %></lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc><%= "#{@host}#{places_bars_path}" %></loc>
-    <lastmod><%= Place.bars.maximum(:updated_at) %></lastmod>
+    <lastmod><%= Place.bars.maximum(:updated_at).iso8601 %></lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc><%= "#{@host}#{places_shops_path}" %></loc>
-    <lastmod><%= Place.shops.maximum(:updated_at) %></lastmod>
+    <lastmod><%= Place.shops.maximum(:updated_at).iso8601 %></lastmod>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc><%= "#{@host}#{events_path}" %></loc>
-    <lastmod><%= Event.maximum(:updated_at) %></lastmod>
+    <lastmod><%= Event.maximum(:updated_at).iso8601 %></lastmod>
     <changefreq>daily</changefreq>
   </url>
   <% @places.each do |place| %>
      <url>
         <loc><%= "#{@host}#{place_path(place.slug)}" %></loc>
-        <lastmod><%= place.updated_at %></lastmod>
+        <lastmod><%= place.updated_at.iso8601 %></lastmod>
         <changefreq>daily</changefreq>
     </url>
   <% end %>
@@ -35,7 +35,7 @@
   <% @events.each do |event| %>
      <url>
         <loc><%= "#{@host}#{event_path(event.slug)}" %></loc>
-        <lastmod><%= event.updated_at %></lastmod>
+        <lastmod><%= event.updated_at.iso8601 %></lastmod>
         <changefreq>daily</changefreq>
      </url>
    <% end %>
