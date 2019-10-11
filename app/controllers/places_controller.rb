@@ -14,7 +14,7 @@ class PlacesController < ApplicationController
     render :show,
            locals: {
              cover_image: @place.cover_image,
-             number_of_favorites: @place.favorites.count,
+             number_of_favorites: @place.favorites.size,
              place: @place,
              user_has_favorited_place:
                current_user&.favorites&.where(place: @place)&.exists?

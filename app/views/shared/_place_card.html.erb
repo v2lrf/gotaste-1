@@ -6,8 +6,14 @@
         <h3 class="mb-2 text-2xl"><%= place.name %></h3>
         <p class="text-gray-700 text-base"><%= place.short_description %> </p>
       </div>
-      <div class="border-t border-gray-300 px-4 py-2 text-gray-500">
-        <%= t("place_categories.#{place.category}") %>
+      <div class="flex justify-between border-t border-gray-300 px-4 py-2 text-gray-500">
+        <div>
+          <%= t("place_categories.#{place.category}") %>
+        </div>
+
+        <div>
+          <i class="fas fa-heart"></i> <%= place.favorites.size %>
+        </div>
       </div>
     </div>
   </div>
