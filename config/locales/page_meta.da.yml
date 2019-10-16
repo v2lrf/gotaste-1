@@ -14,6 +14,9 @@ da:
     titles:
       base: "%{value} – GoTaste"
       admin:
+        areas:
+          edit: Opdater %{name}
+          new: Nyt område
         cover_images:
           show: Coverbillede
         events:

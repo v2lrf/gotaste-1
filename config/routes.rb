@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: 'home#index'
+    resources :areas, only: %i[index new create edit update]
     resources :places, only: %i[index new create edit update] do
       resource :cover_image, only: %i[show update]
       resources :events, only: %i[index new create edit update]

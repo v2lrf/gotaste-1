@@ -1,5 +1,8 @@
 da:
   admin:
+    areas:
+      index:
+        add_area: Tilføj område
     cover_images:
       show:
         submit: Opdater coverbillede
