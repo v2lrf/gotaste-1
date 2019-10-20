@@ -19,6 +19,11 @@ class Area < ApplicationRecord
   private
 
   def generate_slug
-    self.slug = name.parameterize
+    self.slug =
+      if parent_id.present?
+        parent.slug + "-#{name.parameterize}"
+      else
+        name.parameterize
+      end
   end
 end
