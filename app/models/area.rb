@@ -4,6 +4,7 @@ class Area < ApplicationRecord
   validates :name, presence: true
   validates :slug, presence: true, uniqueness: true
 
+  has_rich_text :description
   belongs_to :parent, class_name: 'Area', optional: true
   has_many :children,
            class_name: 'Area',

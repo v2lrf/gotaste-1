@@ -41,7 +41,13 @@ module Admin
     end
 
     def area_params
-      params.require(:area).permit(:name, :latitude, :longitude, :parent_id)
+      params.require(:area).permit(
+        :name,
+        :latitude,
+        :longitude,
+        :parent_id,
+        :description
+      )
     end
   end
 end
