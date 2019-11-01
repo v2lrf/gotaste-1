@@ -41,5 +41,7 @@ module Gotaste
     config.action_mailer.postmark_settings = {
       api_token: ENV['POSTMARK_API_KEY']
     }
+
+    config.active_job.queue_adapter = :sidekiq
   end
 end

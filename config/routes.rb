@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
   constraints CanAccessFlipperUI do
     mount Flipper::UI.app(Flipper) => '/flipper'
+    mount Sidekiq::Web => '/sidekiq'
   end
 
   devise_for :users,
