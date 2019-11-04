@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_10_151536) do
+ActiveRecord::Schema.define(version: 2019_10_28_110632) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -107,6 +107,23 @@ ActiveRecord::Schema.define(version: 2019_10_10_151536) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["parent_id"], name: "index_areas_on_parent_id"
     t.index ["slug"], name: "index_areas_on_slug", unique: true
+  end
+
+  create_table "crawled_events", force: :cascade do |t|
+    t.bigint "place_id", null: false
+    t.string "url"
+    t.string "name"
+    t.string "date"
+    t.string "time"
+    t.string "link"
+    t.string "image_url"
+    t.string "where"
+    t.string "location"
+    t.text "description"
+    t.text "source"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["place_id"], name: "index_crawled_events_on_place_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -228,6 +245,7 @@ ActiveRecord::Schema.define(version: 2019_10_10_151536) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "crawled_events", "places"
   add_foreign_key "events", "places"
   add_foreign_key "favorites", "places"
   add_foreign_key "favorites", "users"
