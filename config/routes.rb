@@ -25,6 +25,10 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :api do
+    resources :crawled_events, only: :create
+  end
+
   resources :events, only: %i[index show], param: :event_slug
   resources :leads, only: :create
   namespace :places do
