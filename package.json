@@ -31,7 +31,7 @@
   },
   "version": "0.1.0",
   "devDependencies": {
-    "@prettier/plugin-ruby": "^0.15.0",
+    "@prettier/plugin-ruby": "^0.15.1",
     "eslint": "^6.6.0",
     "eslint-config-airbnb": "^17.1.1",
     "eslint-config-prettier": "^6.5.0",
