@@ -758,12 +758,12 @@
   dependencies:
     "@fortawesome/fontawesome-common-types" "^0.2.25"
 
-"@prettier/plugin-ruby@^0.15.1":
-  version "0.15.1"
-  resolved "https://registry.yarnpkg.com/@prettier/plugin-ruby/-/plugin-ruby-0.15.1.tgz#5e747d56f6a50e3428088c57570079b3850093ed"
-  integrity sha512-MmWFEwV9IYbz+hgiOC9my0R2F4M1FZ0OgLY16uNwkATE5hjRUt7GhOetvZLYB7hfOrl33o9PMPDpLwFRGnFtxQ==
+"@prettier/plugin-ruby@^0.16.0":
+  version "0.16.0"
+  resolved "https://registry.yarnpkg.com/@prettier/plugin-ruby/-/plugin-ruby-0.16.0.tgz#386cf4af82e297b0d61ec1e1205b1823811ff908"
+  integrity sha512-3jHEPFL/vK34TPfNByCX0uDiJqHSHvo36LacWCxe7d+yoEUhfOE5oNi2Q1PRej08wKAopU5aApJVPnfz9LoCsw==
   dependencies:
-    prettier "^1.16.4"
+    prettier ">=1.10"
 
 "@rails/actioncable@^6.0.1":
   version "6.0.1"
@@ -6168,7 +6168,7 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier@^1.16.4, prettier@^1.17.0, prettier@^1.19.1:
+prettier@>=1.10, prettier@^1.17.0, prettier@^1.19.1:
   version "1.19.1"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.19.1.tgz#f7d7f5ff8a9cd872a7be4ca142095956a60797cb"
   integrity sha512-s7PoyDv/II1ObgQunCbB9PdLmUcBZcnWOcxDh7O0N/UwDEsHyqkW+Qh28jW+mVuCdx7gLB0BotYI1Y6uI9iyew==
