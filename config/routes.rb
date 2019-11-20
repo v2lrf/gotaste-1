@@ -29,6 +29,12 @@ Rails.application.routes.draw do
     resources :crawled_events, only: :create
   end
 
+  resources :areas, only: :show, path: :a do
+    resources :bars, only: :index, controller: 'areas/bars'
+    resources :shops, only: :index, controller: 'areas/shops'
+    resources :events, only: :index, controller: 'areas/events'
+  end
+
   resources :events, only: %i[index show], param: :event_slug
   resources :leads, only: :create
   namespace :places do

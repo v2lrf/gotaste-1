@@ -29,6 +29,14 @@ da:
           index: Steder
           new: Nyt sted
           edit: Opdater %{name}
+      areas:
+        bars:
+          index: "%{page_title}"
+        events:
+          index: "%{page_title}"
+        shops:
+          index: "%{page_title}"
+        show: Udforsk %{name}
       devise:
         sessions:
           new: Log ind

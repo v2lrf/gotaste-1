@@ -17,6 +17,48 @@ da:
     places:
       index:
         add_place: Tilføj sted
+  areas:
+    bars:
+      index:
+        header: Vinbarer i %{area_name}
+    headers:
+      defaults:
+        bars: Vinbarer
+        events: Begivenheder
+        shops: Vinhandlere
+      kobenhavn:
+        bars: Vinbarer i København
+        events: Begivenheder i København
+        shops: Vinhandlere i København
+      kobenhavn-indre-by:
+        bars: Vinbarer i Indre By
+        events: Begivenheder i Indre By
+        shops: Vinhandlere i Indre By
+      kobenhavn-norrebro:
+        bars: Vinbarer på Nørrebro
+        events: Begivenheder på Nørrebro
+        shops: Vinhandlere på Nørrebro
+      kobenhavn-vesterbro:
+        bars: Vinbarer på Vesterbro
+        events: Begivenheder på Vesterbro
+        shops: Vinhandlere på Vesterbro
+      kobenhavn-osterbro:
+        bars: Vinbarer på Østerbro
+        events: Begivenheder på Østerbro
+        shops: Vinhandlere på Østerbro
+      kobenhavn-frederiksberg:
+        bars: Vinbarer på Frederiksberg
+        events: Begivenheder på Frederiksberg
+        shops: Vinhandlere på Frederiksberg
+    shops:
+      index:
+        header: Vinhandlere i %{area_name}
+    show:
+      bars: Vinbarer
+      events: Begivenheder
+      explore_neighborhoods: Gå på opdagelse i Københavns nabolag
+      header: Udforsk %{area_name}
+      shops: Vinhandlere
   date:
     formats:
       medium: "%A d. %d. %B kl. %R"
@@ -111,6 +153,7 @@ da:
       address_second_part: "%{postal_code} %{city}"
       directions: Rutevejledning
     navbar:
+      discover: Udforsk
       events: Begivenheder
       places: Steder
       sign_in: Log ind

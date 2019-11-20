@@ -40,6 +40,32 @@
      </url>
    <% end %>
 
+   <% @areas.each do |area| %>
+    <url>
+      <loc><%= "#{@host}#{area_path(area.slug)}" %></loc>
+      <lastmod><%= area.places.active.order(updated_at: :desc).last&.updated_at&.iso8601 %></lastmod>
+      <changefreq>daily</changefreq>
+    </url>
+
+    <url>
+      <loc><%= "#{@host}#{area_bars_path(area.slug)}" %></loc>
+      <lastmod><%= area.places.bars.active.order(updated_at: :desc).last&.updated_at&.iso8601 %></lastmod>
+      <changefreq>daily</changefreq>
+    </url>
+
+    <url>
+      <loc><%= "#{@host}#{area_shops_path(area.slug)}" %></loc>
+      <lastmod><%= area.places.shops.active.order(updated_at: :desc).last&.updated_at&.iso8601 %></lastmod>
+      <changefreq>daily</changefreq>
+    </url>
+
+    <url>
+      <loc><%= "#{@host}#{area_events_path(area.slug)}" %></loc>
+      <lastmod><%= area.places.shops.active.order(updated_at: :desc).last&.updated_at&.iso8601 %></lastmod>
+      <changefreq>daily</changefreq>
+    </url>
+   <% end %>
+
   <url>
     <loc><%= "#{@host}#{about_path}" %></loc>
     <changefreq>weekly</changefreq>

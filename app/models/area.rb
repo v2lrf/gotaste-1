@@ -12,6 +12,8 @@ class Area < ApplicationRecord
            dependent: :restrict_with_exception,
            inverse_of: :parent
 
+  has_many :places, dependent: :restrict_with_exception
+
   geocoded_by :name
 
   before_validation :generate_slug
