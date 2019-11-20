@@ -19,6 +19,7 @@
     <div class="hidden sm:flex sm:items-center sm:w-auto w-full h-auto sm:h-16" id="menu">
       <nav>
         <ul class="sm:flex items-center justify-between pt-4 sm:pt-0">
+          <li><%= link_to t('.discover'), area_path('kobenhavn'), class: 'block py-4 px-4 sm:py-1 sm:px-2 text-red-500 font-semibold no-underline hover:bg-red-100 rounded' %></li>
           <li><%= link_to t('.places'), places_path, class: 'block py-4 px-4 sm:py-1 sm:px-2 text-red-500 font-semibold no-underline hover:bg-red-100 rounded' %></li>
           <li><%= link_to t('.events'), events_path, class: 'block py-4 px-4 sm:py-1 sm:px-2 text-red-500 font-semibold no-underline hover:bg-red-100 rounded' %></li>
           <div class="hidden sm:flex sm:mx-2 sm:my-1 border border-red-100 h-4"></div>

@@ -1,0 +1,27 @@
+<div class="pt-2">
+  <h1><%= t('.header', area_name: area.name) %></h1>
+  <p class="pt-2"><%= area.description %></p>
+
+  <div class="flex flex-wrap -m-3 pt-6">
+    <%= render 'category', title: t('.bars'), link: area_bars_path(area.slug), image: 'wine-bar' %>
+    <%= render 'category', title: t('.shops'), link: area_shops_path(area.slug), image: 'wine-shop' %>
+    <%= render 'category', title: t('.events'), link: area_events_path(area.slug), image: 'wine-event' %>
+  </div>
+
+  <% if area_has_children %>
+    <div class="pt-10">
+      <h2 class="text-2xl font-semibold"><%= t('.explore_neighborhoods') %></h2>
+      <div class="md:flex flex-wrap w-full pt-4 justify-between">
+        <% area_children.each do |sub_area| %>
+          <%= link_to area_path(sub_area.slug), class: 'w-1/5 p-2' do %>
+          <div class="bg-white rounded-lg shadow hover:shadow-md overflow-hidden py-4 text-center">
+            <div class="font-medium text-gray-900 text-lg"><%= sub_area.name %></div>
+          </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+

@@ -27,6 +27,11 @@
     <%= f.select :parent_id, Area.all.pluck(:name, :id), include_blank: true, class: 'w-full px-5 py-1 text-gray-700 border rounded' %>
   </div>
 
+  <div>
+    <%= f.label :description, class: 'block text-sm text-gray-00' %>
+    <%= f.rich_text_area :description, placeholder: 'Long description', class: 'w-full px-5 py-1 text-gray-700 border rounded' %>
+  </div>
+
   <div class="mt-6">
     <%= f.submit class: 'px-4 py-1 text-white tracking-wider bg-green-600 rounded' %>
   </div>

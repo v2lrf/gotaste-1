@@ -12,7 +12,9 @@ class Location < ApplicationRecord
 
   geocoded_by :full_address
 
-  after_validation :geocode, if: -> { full_address_changed? }
+  unless Rails.env.test?
+    after_validation :geocode, if: -> { full_address_changed? }
+  end
 
   def full_address
     [street_name, street_number, postal_code, city].compact.join(', ')

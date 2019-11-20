@@ -5,5 +5,6 @@ class SitemapsController < ApplicationController
     @host = "#{request.protocol}#{request.host}"
     @places = Place.active
     @events = Event.order(:begins_at)
+    @areas = Area.all
   end
 end
