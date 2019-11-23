@@ -1,0 +1,20 @@
+<div class="p-12 sm:p-24 text-center">
+  <div class=" justify-center">
+    <div>
+      <h1 class="text-3xl sm:text-6xl font-extrabold sm:font-bold"><%= t('.heading') %></h1>
+    </div>
+    <div class="">
+      <p class="text-2xl pb-10">
+        <%== t(
+          '.text',
+          bars: link_to(t('.bars'), places_bars_path, class: 'pb-1 border-b-2 border-red-300 hover:border-red-400'),
+          shops: link_to(t('.shops'), places_shops_path, class: 'pb-1 border-b-2 border-red-300 hover:border-red-400'),
+          events: link_to(t('.events'), events_path, class: 'pb-1 border-b-2 border-red-300 hover:border-red-400')
+         )
+        %>
+      </p>
+
+      <%= link_to t('.button_text'), new_user_registration_path, class: 'px-5 py-3 bg-green-500 hover:bg-green-400 rounded text-white text-2xl font-bold hover:shadow' %>
+    </div>
+  </div>
+</div>

@@ -96,6 +96,13 @@ da:
       header_thanks: Tusind tak! Du er for sej!
       sub_header: Find de bedste vinbarer, vinhandlere og vinsmagninger.
       sub_header_thanks: Tusind tak for din interesse i GoTaste. Du hører fra os når vi er klar.
+    signup_cta_card:
+      bars: vinbarer
+      button_text: Tilmeld
+      events: begivenheder
+      heading: Elsker du vin?
+      shops: vinhandlere
+      text: Få nem adgang til byens bedste<br>%{bars}, %{shops} og %{events}.
   layouts:
     mailer:
       hello: Hej!
