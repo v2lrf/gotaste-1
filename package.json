@@ -26,7 +26,7 @@
     "react-dom": "^16.12.0",
     "react-rater": "^5.1.1",
     "tailwindcss": "^1.1.4",
-    "trix": "^1.2.1",
+    "trix": "^1.2.2",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
