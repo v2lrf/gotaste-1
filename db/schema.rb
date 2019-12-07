@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_28_110632) do
+ActiveRecord::Schema.define(version: 2019_12_07_101208) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -126,6 +126,17 @@ ActiveRecord::Schema.define(version: 2019_10_28_110632) do
     t.index ["place_id"], name: "index_crawled_events_on_place_id"
   end
 
+  create_table "crawls", force: :cascade do |t|
+    t.string "page_url"
+    t.integer "page_type"
+    t.bigint "place_id", null: false
+    t.text "source"
+    t.boolean "imported", default: false, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["place_id"], name: "index_crawls_on_place_id"
+  end
+
   create_table "events", force: :cascade do |t|
     t.string "name", null: false
     t.string "slug", null: false
@@ -198,6 +209,18 @@ ActiveRecord::Schema.define(version: 2019_10_28_110632) do
     t.index ["place_id"], name: "index_opening_hours_on_place_id"
   end
 
+  create_table "pages", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "slug", null: false
+    t.string "description"
+    t.boolean "published", default: false, null: false
+    t.integer "parent_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["parent_id"], name: "index_pages_on_parent_id"
+    t.index ["slug"], name: "index_pages_on_slug", unique: true
+  end
+
   create_table "places", force: :cascade do |t|
     t.string "name", null: false
     t.string "slug", null: false
@@ -246,6 +269,7 @@ ActiveRecord::Schema.define(version: 2019_10_28_110632) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "crawled_events", "places"
+  add_foreign_key "crawls", "places"
   add_foreign_key "events", "places"
   add_foreign_key "favorites", "places"
   add_foreign_key "favorites", "users"
