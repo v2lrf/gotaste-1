@@ -14,6 +14,9 @@ da:
     opening_hours:
       show:
         submit: Opdater åbningstider
+    pages:
+      index:
+        add_page: Tilføj side
     places:
       index:
         add_place: Tilføj sted

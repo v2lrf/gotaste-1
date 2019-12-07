@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: 'home#index'
     resources :areas, only: %i[index new create edit update]
+    resources :pages, only: %i[index new create edit update]
     resources :places, only: %i[index new create edit update] do
       resource :cover_image, only: %i[show update]
       resources :events, only: %i[index new create edit update]
@@ -48,6 +49,8 @@ Rails.application.routes.draw do
 
   get '/about', to: 'pages#about', as: :about
   get '/sitemap', to: 'sitemaps#index'
+
+  get '*path', to: 'pages#show'
 
   root to: 'home#index'
 end

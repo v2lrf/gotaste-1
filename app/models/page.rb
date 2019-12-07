@@ -6,6 +6,8 @@ class Page < ApplicationRecord
 
   before_validation :generate_slug
 
+  scope :published, -> { where(published: true) }
+
   private
 
   def generate_slug

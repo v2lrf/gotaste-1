@@ -5,6 +5,8 @@ da:
         index: Synes du også det er svært at finde vinarrangementer? Vi har samlet en liste med de bedste vinsmagninger for dig.
       home:
         index: GoTaste hjælper dig med at finde de bedste vinbarer, vinhandlere og vinsmagninger.
+      pages:
+        show: "%{description}"
       places:
         bars:
           index: Mangler du et sted at få et godt glas vin, får du her et overblik over Københavns bedste vinbarer.
@@ -25,6 +27,10 @@ da:
           edit: Opdater %{name}
         opening_hours:
           show: Åbningstider
+        pages:
+          index: Sider
+          new: Ny side
+          edit: Opdater %{title}
         places:
           index: Steder
           new: Nyt sted
@@ -51,6 +57,7 @@ da:
       registrations:
         new: Kom i gang
       pages:
+        show: "%{title}"
         about: Om GoTaste
       places:
         bars:

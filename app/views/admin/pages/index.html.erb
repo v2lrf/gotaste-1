@@ -1,0 +1,26 @@
+<div class="w-full bg-white rounded shadow">
+  <div class="flex justify-between p-4">
+    <div>Filters</div>
+    <div>
+      <%= link_to t('.add_page'), new_admin_page_path, class: 'px-4 py-2 text-white tracking-wider bg-gray-600 rounded hover:bg-gray-700' %>
+    </div>
+  </div>
+
+  <div class="justify-center">
+    <table class="w-full">
+      <thead class="border-b">
+        <th class="text-left p-3 px-5">Name</th>
+        <th class="text-left p-3 px-5">Actions</th>
+      </thead>
+
+      <tbody>
+        <% @pages.each do |page| %>
+        <tr class="border-b hover:bg-orange-100">
+          <td class="p-3 px-5"><%= link_to page.title, edit_admin_page_path(page) %></td>
+          <td class="p-3 px-5"><%= link_to 'Edit', edit_admin_page_path(page) %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
