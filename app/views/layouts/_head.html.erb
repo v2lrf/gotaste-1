@@ -9,7 +9,11 @@
   <% if page_meta.description.present? %>
     <meta name="description" content="<%= page_meta.description %>">
   <% end %>
+<link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
+
   <%= render 'shared/favicon' %>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  <script src="https://kit.fontawesome.com/8aae268150.js" crossorigin="anonymous"></script>
 </head>

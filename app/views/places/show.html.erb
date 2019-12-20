@@ -1,3 +1,5 @@
+<%= react_component("HelloWorld", { greeting: "Hello from Anders." }) %>
+
 <div class="pb-2 md:pb-6">
   <%= cl_image_tag(cover_image.key, width: 1000, height: 400, crop: :fill, quality: 100, class: 'shadow-md w-full object-cover' ) if cover_image.attached? %>
 </div>
