@@ -46,7 +46,7 @@ blocks:
           # Read about caching: https://docs.semaphoreci.com/article/54-toolbox-reference#cache
           - cache restore gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock),gems-$SEMAPHORE_GIT_BRANCH-,gems-master-
           # Set Ruby version:
-          - sem-version ruby 2.6.2
+          - sem-version ruby 2.6.5
           - bundle install --deployment -j 4 --path vendor/bundle
           # Store the latest version of dependencies in cache,
           # to be used in next blocks and future workflows:
@@ -79,7 +79,7 @@ blocks:
             # restored, but generally this is not the case with other package
             # managers. Installation will not actually run and command will
             # finish quickly:
-            - sem-version ruby 2.6.2
+            - sem-version ruby 2.6.5
             - bundle install --deployment --path vendor/bundle
             - bundle exec rubocop
 
@@ -113,7 +113,7 @@ blocks:
             # Start Postgres database service.
             - sem-service start postgres
             - cat /dev/null > config/database.yml
-            - sem-version ruby 2.6.2
+            - sem-version ruby 2.6.5
             - nvm use
             - bundle install --deployment --path vendor/bundle
             - yarn install
